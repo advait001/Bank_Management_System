@@ -1,0 +1,77 @@
+#include <iostream>
+#include <fstream>
+#include "Bank_System.h"
+#include "Bank_Staff.h"
+
+using namespace std;
+
+int main()
+{
+	//..Definitions 
+	unsigned short number;
+	char username[30];
+	char password[30];
+	char Email[30];
+	char Re_Confirm[30];
+	char name[30];
+	char Phone_Number[15];
+	unsigned short age;
+
+	//..Make objects of the class
+	Bank_System object;
+	Bank_Staff Obj;
+
+	//..Greet function called 
+	object.Greet();
+
+	//________________________________________..Login and signup code..________________________________________
+	//..Working for a single persons use currently..
+	cout << "\n\t1) Login (existing user) \n\t2) Sign-up (new user)\n\t3) Bank Management Login\n" << endl;
+	cout << "\t"; cin >> number;
+
+	//..Personal details 
+	if (number == 2){
+
+		cout << "\n\tEnter the following details to sign-up as a new user in our bank." << endl;
+		cout << "\n\tFirst Name: ";
+		cin >> name;
+		cout << "\tPhone number: ";
+		cin >> Phone_Number;
+		cout << "\tEmail-ID: ";
+		cin >> Email;
+		cout << "\tAge: ";
+		cin >> age;
+
+		ofstream write("Personal_Details.txt");
+		write << name << "\n" << Phone_Number << "\n" << Email << "\n" << age << endl;
+
+	object.Signup();
+	}
+
+	//..Login code..
+	else if (number == 1) {
+		cout << "\n\tUser-name: ";
+		cin >> username;
+		cout << "\tPassword: ";
+		cin >> password;
+		object.Login(username,password);
+	}
+	else if (number == 3)
+	{
+		cout << "\t\n1) Login \n\t2)Signup\n";
+		unsigned short num;
+		cin >> num;
+		
+		if (num == 1)
+		{
+			Obj.Login(username, password);
+		}
+		else if (num == 2)
+		{
+			Obj.Bank_Signup_ID();
+		}
+	}
+	//..________________________________________Login and Signup Code end..________________________________________
+
+	return 0;
+}
