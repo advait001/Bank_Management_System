@@ -1,4 +1,15 @@
-﻿  Main_menu.cpp
-C:\Users\advai\OneDrive\Desktop\SECOND YEAR\Microprojects\Data Structures Using C\Bank_Management_system\Bank_Management_system\Main_menu.cpp(39): warning C4715: 'Main_menu::Menu': not all control paths return a value
-C:\Users\advai\OneDrive\Desktop\SECOND YEAR\Microprojects\Data Structures Using C\Bank_Management_system\Bank_Management_system\Main_menu.cpp(55): warning C4715: 'Main_menu::Call_Function': not all control paths return a value
-  Bank_Management_system.vcxproj -> C:\Users\advai\OneDrive\Desktop\SECOND YEAR\Microprojects\Data Structures Using C\Bank_Management_system\Debug\Bank_Management_system.exe
+﻿  Account_Modifications.cpp
+  Bank_Management_system.cpp
+C:\Users\advai\OneDrive\Documents\GitHub\Bank_Management_System\Bank_Management_system\Bank_Management_system\Bank_Management_system.cpp(15,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\advai\OneDrive\Documents\GitHub\Bank_Management_System\Bank_Management_system\Bank_Management_system\Bank_Management_system.cpp(29,17): warning C4101: 'ch2': unreferenced local variable
+C:\Users\advai\OneDrive\Documents\GitHub\Bank_Management_System\Bank_Management_system\Bank_Management_system\Bank_Management_system.cpp(26,17): warning C4101: 'ch1': unreferenced local variable
+  Bank_Staff.cpp
+  Bank_System.cpp
+  Display.cpp
+  Form_Applications.cpp
+  Main_menu.cpp
+  Money_Transaction.cpp
+  Generating Code...
+C:\Users\advai\OneDrive\Documents\GitHub\Bank_Management_System\Bank_Management_system\Bank_Management_system\Main_menu.cpp(55): warning C4715: 'Main_menu::Call_Function': not all control paths return a value
+C:\Users\advai\OneDrive\Documents\GitHub\Bank_Management_System\Bank_Management_system\Bank_Management_system\Main_menu.cpp(39): warning C4715: 'Main_menu::Menu': not all control paths return a value
+  Bank_Management_system.vcxproj -> C:\Users\advai\OneDrive\Documents\GitHub\Bank_Management_System\Bank_Management_system\Debug\Bank_Management_system.exe

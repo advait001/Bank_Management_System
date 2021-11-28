@@ -100,6 +100,7 @@ void main()
 			{
 				//..username and password matched successfully
 				cout << "\n\tuser loged in Successfully" << endl;
+				screen.User_Detail_display();
 			}
 			else if (returned_the_value == -1)
 			{
@@ -144,6 +145,7 @@ void main()
 				if (returned_the_value == 0)
 				{
 					cout << "\tSign up successfull , Welcome to the bank management system" << endl;
+					screen.User_Detail_display();
 				}
 				else if (returned_the_value == -1)
 				{
@@ -177,6 +179,7 @@ void main()
 		if (returned_value == 0)
 		{
 			cout << "Transaction successful" << endl;
+			screen.User_Detail_display();
 		}
 		else if (returned_value == -1)
 		{
@@ -205,6 +208,7 @@ void main()
 		if (returned_value == 0)
 		{
 			cout << "Transaction Successful" << endl;
+			screen.User_Detail_display();
 		}
 		else if (returned_value == -1)
 		{
@@ -405,6 +409,4 @@ void main()
 	else {
 		cout << "Invalid Input";
 	}
-
-	screen.User_Detail_display();
 }
