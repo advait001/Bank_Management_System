@@ -46,76 +46,31 @@ void Form_Applications::ChequeBook()
 }
 void Form_Applications ::Loan(unsigned short TotalTime)
 {
-	if (Salary == 0 || Salary <= 10000)
+	cout << "Enter the amount of loan you want: ";
+	cin >> Loan_Amount;
+	cout << "Enter the salary you earn every month: ";
+	cin >> Salary;
+	if (Loan_Amount > MIN_Amount && Loan_Amount < MAX_Amount)
 	{
-		if (LoanAmount == 8000 || LoanAmount <= 8000) 
+		//..Calculation part 
+		Interest_Amount = (Interest_Rate * Loan_Amount) / 100;
+		Total_Amount = Interest_Amount + Loan_Amount;
+		EMI_Amount = Total_Amount / TotalTime;
+		if (Salary > EMI_Amount)
 		{
-			//..To Find Total Amount After Adding Interest Amount
-			Loan_Principle_Amount = LoanAmount;
-			Loan_Interest_Amount = Loan_Interest_Rate * Loan_Principle_Amount / 100;
-			Total_Amount = Loan_Principle_Amount + Loan_Interest_Amount;
-			
-			TotalMoneyToBePaidPerMonth = Total_Amount / TotalTime;
-
-		}
-		else 
-		{
-			cout << "No Eligibility Found" << endl;
-		}
-	}
-	else if (Salary == 10000 || Salary <= 50000) 
-	{
-		if (LoanAmount == 50000 || LoanAmount <= 50000)
-		{
-			//..To Find Total Amount After Adding Interest Amount
-			Loan_Principle_Amount = LoanAmount;
-			Loan_Interest_Amount = Loan_Interest_Rate * Loan_Principle_Amount / 100;
-			Total_Amount = Loan_Principle_Amount + Loan_Interest_Amount;
-
-			TotalMoneyToBePaidPerMonth = Total_Amount / TotalTime;
-
+			cout << ".___________________________________________________________________________." << endl;
+			cout << "|  Loan Granted..." << endl;
+			cout << "|  Loan Amount Granted: " << Loan_Amount << endl;
+			cout << "|  Interest Rate: " << Interest_Rate << endl;
+			cout << "|  Total number of days: " << TotalTime << endl;
+			cout << "|  EMI money to be given every month: " << EMI_Amount << endl;
+			cout << "|  Total amount to be returned: " << Total_Amount << endl;
+			cout << ".___________________________________________________________________________." << endl;
 		}
 		else
 		{
-			cout << "No Eligibility Found" << endl;
+			cout << "Loan cannot be granted as your salary amount is less than the amount to be paid every month." << endl;
 		}
-	}
-	else if (Salary == 50000 || Salary <= 100000)
-	{
-		if (LoanAmount == 100000 || LoanAmount <= 100000)
-		{
-			//..To Find Total Amount After Adding Interest Amount
-			Loan_Principle_Amount = LoanAmount;
-			Loan_Interest_Amount = Loan_Interest_Rate * Loan_Principle_Amount / 100;
-			Total_Amount = Loan_Principle_Amount + Loan_Interest_Amount;
-	
-			TotalMoneyToBePaidPerMonth = Total_Amount / TotalTime;
-
-		}
-		else {
-			cout << "No Eligibility Found" << endl;
-		}
-	}
-	else if (Salary == 100000 || Salary <= 1000000)
-	{
-		if (LoanAmount == 1000000 || LoanAmount <= 1000000)
-		{
-			//..To Find Total Amount After Adding Interest Amount
-			Loan_Principle_Amount = LoanAmount;
-			Loan_Interest_Amount = Loan_Interest_Rate * Loan_Principle_Amount / 100;
-			Total_Amount = Loan_Principle_Amount + Loan_Interest_Amount;
-			
-			TotalMoneyToBePaidPerMonth = Total_Amount / TotalTime;
-
-		}
-		else
-		{
-			cout << "No Eligibility Found" << endl;
-		}
-	}//..Bug
-	else
-	{
-		cout << "No Eligibility Found" << endl;
 	}
 }
 int Form_Applications::Conversions()

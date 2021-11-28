@@ -377,7 +377,7 @@ void main()
 		cin >> Object2.Salary;
 
 		cout << "Loan Amount : ";
-		cin >> Object2.LoanAmount;
+		cin >> Object2.Loan_Amount;
 
 		cout << "Days : ";
 		cin >> Object2.Days;
@@ -391,11 +391,11 @@ void main()
 
 		Object2.Loan(Return_Total_Time);
 
-		cout << "Your Principal Amount : " << Object2.Loan_Principle_Amount << endl;
-		cout << "Your Interest Amount : " << Object2.Loan_Interest_Amount << endl;
+		cout << "Your Principal Amount : " << Object2.Loan_Amount << endl;
+		cout << "Your Interest Amount : " << Object2.Interest_Amount << endl;
 		cout << "Total Amount You have Pay : " << Object2.Total_Amount << endl;
 
-		cout << "Money To Be Paid Per Month : " << Object2.TotalMoneyToBePaidPerMonth << endl;
+		cout << "Money To Be Paid Per Month : " << Object2.EMI_Amount << endl;
 
 		cout << "------Reason For Taking Loan------ " << endl;
 		cout << "1.Educational Loan : " << endl;

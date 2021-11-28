@@ -10,19 +10,13 @@ public:
 	unsigned int aadharNumber;
 	unsigned int SalarySlipNo;
 	char PanCardNO[20];
-	unsigned int LoanAmount;
-	char Reason[30];
-	unsigned short Loan_Interest_Rate = 6; //..6%
-	unsigned int Loan_Principle_Amount;
-	unsigned short Loan_Time_Period;
-	unsigned int Salary;
-	unsigned int Loan_Interest_Amount;
-	unsigned int Total_Amount;
+	unsigned int loanamount;
+	char Reason2[30];
 	unsigned short Days;
 	unsigned short Months;
 	unsigned short Years;
-	unsigned short MonthConversion;//..For Calculating Months into Days
-	unsigned short YearConversion;//..For Calculating Years into Days
+	unsigned short MonthConversion;//..for calculating months into days
+	unsigned short YearConversion;//..for calculating years into days
 	unsigned short OneYear = 365;//..365 days
 	unsigned short num;
 	unsigned short even;
@@ -30,11 +24,19 @@ public:
 	unsigned short TotalNumberOfDays;
 	unsigned short NonLeapYear;
 	unsigned short TotalLeapYear;
-	unsigned short TotalTime;
 	unsigned int Return_Total_Time;
-	unsigned int TotalMoneyToBePaidPerMonth;
-	unsigned short N;
-	char Others[30];
+	char others[30];
+	unsigned short N; //..-->
+	unsigned int Loan_Amount;
+	unsigned int Salary;
+	unsigned int Total_Amount;
+	unsigned int Interest_Amount;
+	unsigned int EMI_Amount;
+	const unsigned short MAX_Amount = 1000000;
+	const unsigned int MIN_Amount = 10000;
+	const unsigned int Interest_Rate = 6;
+	unsigned short TotalTime;
+
 public:
 	void PersonalInformation();
 	void CreditCard();
