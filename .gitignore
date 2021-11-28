@@ -26,6 +26,16 @@
 *.a
 *.lib
 
+#debug folders
+bin
+obj
+config
+debug
+.vs
+.ipch
+*.suo
+
+
 # Executables
 *.exe
 *.out
