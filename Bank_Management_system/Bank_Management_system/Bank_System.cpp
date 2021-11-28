@@ -51,14 +51,18 @@ int Bank_System::Login(char username[30], char password[30])
 
 	if (strcmp(Read, username) == 0)
 	{
-		if (strcmp(PWD, password) == 0)
+		if (strcmp(PWD, password) == 0){
 			cout << "\n\tuser loged in Successfully" << endl;
-		else
+		}
+		else{
 			cout << "\n\tWrong Password" << endl;
+		exit(0);
+		}
 	}
 	else
 	{
 		cout << "\n\tUser not found" << endl;
+		exit(0);
 	}
 	return 0;
 }

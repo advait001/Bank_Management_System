@@ -4,33 +4,47 @@
 
 using namespace std;
 
+void Main_menu::Line_func(unsigned short Upper_or_Lower)
+{
+	if (Upper_or_Lower == 1){
+		cout << "\n.___________________________________." << endl;
+	}
+	else if (Upper_or_Lower == 0)
+	{
+		cout << ".___________________________________.\n" << endl;
+	}
+}
+
 int Main_menu::Menu()
 {
 	//..code pending
-	cout << ".________________________________________________." << endl;
-	cout << "|                   Main Menu" << endl;
-	cout << "|\t1.Transactions and Transfer Money" << endl;
-	cout << "|\t2.Modification of accounts" << endl;
-	cout << "|\t3.Application Forms" << endl;
-	cout << "|\t4.Close Account" << endl;
-	cout << "|\t5.Open New Account" << endl;
-	cout << "|\t6.Customer Service Help desk" << endl;
-	cout << "|\t7.Offers" << endl;
-	cout << "|________________________________________________." << endl;
+	cout << "\n\t.________________________________________________." << endl;
+	cout << "\t|                   Main Menu" << endl;
+	cout << "\t|\t1.Transactions and Transfer Money" << endl;
+	cout << "\t|\t2.Modification of accounts" << endl;
+	cout << "\t|\t3.Application Forms" << endl;
+	cout << "\t|\t4.Close Account" << endl;
+	cout << "\t|\t5.Open New Account" << endl;
+	cout << "\t|\t6.Customer Service Help desk" << endl;
+	cout << "\t|\t7.Offers" << endl;
+	cout << "\t|________________________________________________.\n" << endl;
 
 	cin >> Main_menu_select;
 
 	if (Main_menu_select == 1)
 	{
-		Withdraw_money();
+		Value = Withdraw_money();
+		return Value;
 	}
 	else if (Main_menu_select == 2)
 	{
-		Account_Modification_menu();
+		Value = Account_Modification_menu();
+		return Value;
 	}
 	else if (Main_menu_select == 3)
 	{
-		Form_Application_menu();
+		Value = Form_Application_menu();
+		return Value;
 	}
 	else
 	{
@@ -40,25 +54,27 @@ int Main_menu::Menu()
 
 int Main_menu::Call_Function()
 {
-	cout << "Enter 1 to go back to the main menu or Enter 0 to exit throught the code" << endl;
+	cout << "\n\tEnter 1 to go back to the main menu or Enter 0 to exit throught the code" << endl;
 	cin >> _Call;
 
 	if (_Call == 0)
 	{
-		return 0;
+		exit(0);
 	}
 	else if (_Call == 1)
 	{ //..Code to be continued
-		Menu();
-		return 0;
+		Main_return_value = Menu();
+		return Main_return_value;
 	}
 }
 
 int Main_menu::Withdraw_money()
 {
-	cout << "\n\t1.Deposit Amount\n" << endl;
+	Line_func(1);
+	cout << "\t1.Deposit Amount\n" << endl;
 	cout << "\t2.Transfer Amount\n" << endl;
-	cout << "\t3.Withdraw Amount\n" << endl;
+	cout << "\t3.Withdraw Amount" << endl;
+	Line_func(0);
 	cin >> Input;
 
 	return Input;
@@ -66,20 +82,24 @@ int Main_menu::Withdraw_money()
 
 int Main_menu::Account_Modification_menu()
 {
-	cout << "1. Change Account Type\n" << endl;
-	cout << "2. Change Account Details\n" << endl;
-	cout << "3. Change User Details\n" << endl;
-	
+	Line_func(1);
+	cout << "1. Change Account Type" << endl;
+	cout << "2. Change Account Details" << endl;
+	cout << "3. Change User Details" << endl;
+	Line_func(0);
+
 	cin >> Input;
 	return Input;
 }
 
 int Main_menu::Form_Application_menu()
 {
+	Line_func(1);
 	cout << "1.Credit Card" << endl;
 	cout << "2.Debit Card" << endl;
 	cout << "3.Cheque Book" << endl;
 	cout << "4.Apply For Loan" << endl;
+	Line_func(0);
 
 	cin >> Input;
 	return Input;
