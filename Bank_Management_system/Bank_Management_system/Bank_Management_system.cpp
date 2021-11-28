@@ -10,7 +10,8 @@
 #include "Main_menu.h"
 
 using namespace std;
-//This is main function
+
+//..Main Function Starts Here
 void main()
 {
 	//..Definitions 
