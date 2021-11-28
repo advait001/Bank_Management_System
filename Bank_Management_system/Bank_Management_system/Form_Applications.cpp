@@ -117,5 +117,29 @@ int Form_Applications::Conversions()
 	return TotalTime;
 }
 int Form_Applications::ReasonForTakingLoan() {
+	ofstream write("Loan_Related_Details.txt");
+write << "Salary : " << Salary << "\n" << "Total Loan Amount : " << Total_Amount << "\n" << "Loan Principle Amount : " << Loan_Amount << "\n" << "Loan Interest Amount : " << Interest_Amount << "\n" << "Total Money to be paid per month : " << EMI_Amount << endl;
+for (int i = 0; i < 1; i++) {
+	if (N == 1) {
+		write << "Reason : " << Reason2[i];
+	}
+	else if (N == 2) {
+		write << "Reason : " << Reason2[i + 1];
+	}
+	else if (N == 3) {
+		write << "Reason : " << Reason2[i + 2];
+	}
+	else if (N == 4) {
+		write << "Reason : " << Reason2[i + 3];
+	}
+	else if (N == 5) {
+		write << "Reason : " << Reason2[i + 4];
+	}
+	else if (N == 6) {
+		cout << "Mention your reason : ";
+		cin >> others;
+		write << "Reason : " << others;
+	}
+}
 	return 0;
 }
