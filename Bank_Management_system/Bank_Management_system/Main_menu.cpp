@@ -30,26 +30,7 @@ int Main_menu::Menu()
 	cout << "\t|________________________________________________.\n" << endl;
 
 	cin >> Main_menu_select;
-
-	if (Main_menu_select == 1)
-	{
-		Value = Withdraw_money();
-		return Value;
-	}
-	else if (Main_menu_select == 2)
-	{
-		Value = Account_Modification_menu();
-		return Value;
-	}
-	else if (Main_menu_select == 3)
-	{
-		Value = Form_Application_menu();
-		return Value;
-	}
-	else
-	{
-		return 0;
-	}
+	return Main_menu_select;
 }
 
 int Main_menu::Call_Function()

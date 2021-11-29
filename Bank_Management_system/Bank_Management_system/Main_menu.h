@@ -11,8 +11,6 @@ public:
 public:
 	int Menu();
 	int Call_Function();
-
-private:
 	int Withdraw_money();
 	int Account_Modification_menu();
 	int Form_Application_menu();

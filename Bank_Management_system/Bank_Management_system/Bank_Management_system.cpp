@@ -22,6 +22,7 @@ void main()
 	unsigned int Staff_ID;
 	short returned_value;
 	short continue_code;
+	short Call_func_return;
 	//..Declarations
 	short returned_the_value = 0;
 
@@ -161,7 +162,25 @@ void main()
 	//..Money transaction menu
 	if (continue_code == 1) {
 		//..repairing
-		if (continue_code == 1) {
+
+		if (continue_code == 1)
+		{
+			Call_func_return = Object3.Withdraw_money();
+		}
+		else if (continue_code == 2)
+		{
+			Call_func_return = Object3.Account_Modification_menu();
+		}
+		else if (continue_code == 3)
+		{
+			Call_func_return = Object3.Form_Application_menu();
+		}
+		else
+		{
+			return;
+		}
+
+		if (Call_func_return == 1) {
 			//..Deposit Amount
 			cout << "--------------------------------------------------------------------------------------------------------------------------------\n";
 			cout << "\tEnter Your Account Number : ";
@@ -187,7 +206,7 @@ void main()
 			}
 		}
 		//..Transfer Amount 
-		if (continue_code == 2) {
+		if (Call_func_return == 2) {
 			cout << "-----------------------------------------------------------------------------------------------------------------------------\n";
 			cout << "\tAccount No From *: ";
 			cin >> Object.AccountNo1;
@@ -220,7 +239,7 @@ void main()
 			//..Transfer Amount Case end
 		}
 		//..Withdraw Amount 
-		if (continue_code == 3) {
+		if (Call_func_return == 3) {
 			cout << "----------------------------------------------------------------------------------------------------------------------------\n";
 			cout << "\tEnter Your Account No : ";
 			cin >> Object.AccountNo1;
@@ -253,9 +272,24 @@ void main()
 		//..Account Modification Menu
 		//________________________________________________________Account Modification code starts _________________________________
 
-		continue_code = Object3.Call_Function();
+		if (continue_code == 1)
+		{
+			Call_func_return = Object3.Withdraw_money();
+		}
+		else if (continue_code == 2)
+		{
+			Call_func_return = Object3.Account_Modification_menu();
+		}
+		else if (continue_code == 3)
+		{
+			Call_func_return = Object3.Form_Application_menu();
+		}
+		else
+		{
+			return;
+		}
 
-		if (continue_code == 1) {
+		if (Call_func_return == 1) {
 			//..Account Type
 			cout << "\tChange From Current Account To Savings Account.." << endl;
 
@@ -294,7 +328,7 @@ void main()
 			}
 			//..Account Type Ends
 		}
-		else if (continue_code == 2) {
+		else if (Call_func_return == 2) {
 			//..Account Details
 			cout << "\tAccount Number :";
 			cin >> Object1.AccountNo;
@@ -311,7 +345,7 @@ void main()
 			///..Account Details Ends
 		}
 
-		else if (continue_code == 3) {
+		else if (Call_func_return == 3) {
 			//..User Details
 
 			cout << "\tName : ";
@@ -346,9 +380,24 @@ void main()
 	else if (continue_code == 3) {
 		//________________________________________________________Form Application code starts____________________________________
 
-		continue_code = Object3.Call_Function();
+		if (continue_code == 1)
+		{
+			Call_func_return = Object3.Withdraw_money();
+		}
+		else if (continue_code == 2)
+		{
+			Call_func_return = Object3.Account_Modification_menu();
+		}
+		else if (continue_code == 3)
+		{
+			Call_func_return = Object3.Form_Application_menu();
+		}
+		else
+		{
+			return;
+		}
 		//..Credit Code
-		if (continue_code == 1) {
+		if (Call_func_return == 1) {
 			cout << "\tEnter the Following Details in Order to Apply for Credit Card \n\n" << endl;
 
 			Object2.CreditCard();
@@ -356,7 +405,7 @@ void main()
 			cout << "\tYou Will be Notified for Further Procedure or Application Approval" << endl;
 				
 		}
-		else if (continue_code == 2) {
+		else if (Call_func_return == 2) {
 			cout << "\tEnter the Following Details in Order to Apply for Debit Card \n\n" << endl;
 
 			Object2.DebitCard();
@@ -364,7 +413,7 @@ void main()
 			cout << "\tYou Will be Notified for Further Procedure or Application Approval" << endl;
 				
 		}
-		else if (continue_code == 3) {
+		else if (Call_func_return == 3) {
 			cout << "\tEnter the Following Details in Order to Apply for Cheque Book \n\n" << endl;
 
 			Object2.ChequeBook();
@@ -372,7 +421,7 @@ void main()
 			cout << "\tYou Will be Notified for Further Procedure or Application Approval" << endl;
 				
 		}
-		else if (continue_code == 4) {
+		else if (Call_func_return == 4) {
 			cout << "\tEnter the Following Details in Order to Apply for Loan \n\n" << endl;
 
 			Object2.PersonalInformation();
