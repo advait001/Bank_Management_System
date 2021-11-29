@@ -54,7 +54,7 @@ int Main_menu::Menu()
 
 int Main_menu::Call_Function()
 {
-	cout << "\n\tEnter 1 to go back to the main menu or Enter 0 to exit throught the code" << endl;
+	cout << "\n\tEnter 1 to go back to the main menu or Enter 0 to exit through the code" << endl;
 	cin >> _Call;
 
 	if (_Call == 0)

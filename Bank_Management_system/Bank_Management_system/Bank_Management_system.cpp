@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <fstream>
 #include <string.h>
@@ -23,10 +24,8 @@ void main()
 	short continue_code;
 	//..Declarations
 	short returned_the_value = 0;
-	unsigned short ch1;
 
 	//..For Personal details in form application
-	unsigned short ch2;
 	unsigned int Return_Total_Time;
 
 
@@ -43,7 +42,7 @@ void main()
 	//..Greet function called 
 	System.Greet();
 
-	//________________________________________..Login and signup code..________________________________________
+	//________________________________________..Login and sign-up code..________________________________________
 	//..Working for a single persons use currently..
 
 	cout << "\n\t1) Login (existing user) \n\t2) Sign-up (new user)\n\t3) Bank Management Login\n" << endl;
@@ -70,7 +69,7 @@ void main()
 	}
 
 	//..Login code..
-	//..Take the username and password from the user and enter into the Login member function
+	//..Take the user-name and password from the user and enter into the Login member function
 	else if (number == 1) {
 		cout << "\n\tUser-name: ";
 		cin >> username;
@@ -81,7 +80,7 @@ void main()
 	else if (number == 3) 
 	{
 		//..sign up code 
-		cout << "\n\t1) Login \n\t2) Signup\n";
+		cout << "\n\t1) Login \n\t2) Sign-up\n";
 		unsigned short num;
 		cout << "\t";
 		cin >> num;
@@ -94,12 +93,12 @@ void main()
 			cout << "\tPassword: ";
 			cin >> password;
 
-			//..check whehter the password and the reconfirmed password match with each other 
+			//..check whether the password and the reconfirmed password match with each other 
 			returned_the_value = Obj.Login(username, password);
 			if (returned_the_value == 0)
 			{
 				//..username and password matched successfully
-				cout << "\n\tuser loged in Successfully" << endl;
+				cout << "\n\tuser log in Successful" << endl;
 				screen.User_Detail_display();
 			}
 			else if (returned_the_value == -1)
@@ -110,7 +109,7 @@ void main()
 			}
 			else if (returned_the_value == -2)
 			{
-				//..user not found , wrong username 
+				//..user not found , wrong user-name 
 				cout << "\n\tUser not found" << endl;
 				exit(0);
 			}
@@ -134,7 +133,7 @@ void main()
 			ofstream write("Staff_Personal_Details.txt");
 			write << Obj.name << "\n" << Obj.Phone_Number << "\n" << Staff_ID << "\n" << Obj.age << endl;
 
-			cout << "\tUsername: ";
+			cout << "\tUser-name: ";
 			cin >> Username_;
 			cout << "\n\tPassword: ";
 			cin >> Pass_word;
@@ -410,6 +409,18 @@ void main()
 			cout << "\t5.Business Loan : " << endl;
 			cout << "\t6.Others" << endl;
 			cin >> Object2.N;
+
+			Object2.ReasonForTakingLoan();
+
+			cout << "\t-----Loan Against What-----" << endl;
+			cout << "\t1.Against Home" << endl;
+			cout << "\t2.Against Car" << endl;
+			cout << "\t3.Against Property" << endl;
+			cout << "\t4.Against Business Shares" << endl;
+			cout << "\t5.Others" << endl;
+			cin >> Object2.N1;
+
+			Object2.LoanAgainstWhat();
 				
 		}
 		else {

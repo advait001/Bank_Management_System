@@ -11,7 +11,7 @@ public:
 	unsigned int SalarySlipNo;
 	char PanCardNO[20];
 	unsigned int loanamount;
-	char Reason2[30];
+	//char Reason2[30];
 	unsigned short Days;
 	unsigned short Months;
 	unsigned short Years;
@@ -27,16 +27,20 @@ public:
 	unsigned int Return_Total_Time;
 	char others[30];
 	unsigned short N; //..-->
+	unsigned short N1;
 	unsigned int Loan_Amount;
 	unsigned int Salary;
 	unsigned int Total_Amount;
 	unsigned int Interest_Amount;
 	unsigned int EMI_Amount;
-	const unsigned short MAX_Amount = 1000000;
+	const unsigned int MAX_Amount = 1000000;
 	const unsigned int MIN_Amount = 10000;
 	const unsigned int Interest_Rate = 6;
 	unsigned short TotalTime;
-
+	const char* Reason2[100] = { "Educational Loan","Personal Loan","Car Loan","Home Loan","Business Loan" };
+	const char* LoanAgainst[100] = { "Home","Car","Property","Business Shares" };
+	char Others1[30];
+	unsigned int RegistrationNo;
 public:
 	void PersonalInformation();
 	void CreditCard();
@@ -44,6 +48,7 @@ public:
 	void ChequeBook();
 	void Loan(unsigned short TotalTime);
 	int Conversions();
-	int ReasonForTakingLoan();
+	void ReasonForTakingLoan();
+	void LoanAgainstWhat();
 };
 
