@@ -46,10 +46,6 @@ void Form_Applications::ChequeBook()
 }
 void Form_Applications ::Loan(unsigned short TotalTime)
 {
-	cout << "Enter the amount of loan you want: ";
-	cin >> Loan_Amount;
-	cout << "Enter the salary you earn every month: ";
-	cin >> Salary;
 	if (Loan_Amount > MIN_Amount && Loan_Amount < MAX_Amount)
 	{
 		//..Calculation part 
