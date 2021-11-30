@@ -43,15 +43,15 @@ void Tax_Invoice::Tax_Invoice_Slab()
 			num = 6;
 			TaxSlab[i + 6];
 		}
-		cout << "\t---------------Tax Invoice Report----------------" << endl;
-		cout << "\tName : " << Name1 << "                   " << endl;
-		cout << "\tPhone Number : " << PhnNo << "            " << endl;
-		cout << "\tIncome : " << Income << "               " << endl;
-		cout << "\tAge : " << Age << "                     " << endl;
-		cout << "\tAaDhar No : " << PanCardNO << "         " << endl;
-		cout << "\tGender : " << Gender << "               " << endl;
-		cout << "\tAnnual Income : " << AnnualIncome << "  " << endl;
-		cout << "\tTax Amount : " << TaxAmountPerMonth << "" << endl;
-		cout << "\tTax Slab : " << TaxSlab[i + num] << "            " << endl;
+		cout << "\t|---------------Tax Invoice Report----------------" << endl;
+		cout << "\t|Name : " << Name1 << "                   " << endl;
+		cout << "\t|Phone Number : " << PhnNo << "            " << endl;
+		cout << "\t|Income : " << Income << "               " << endl;
+		cout << "\t|Age : " << Age << "                     " << endl;
+		cout << "\t|AaDhar No : " << PanCardNO << "         " << endl;
+		cout << "\t|Gender : " << Gender << "               " << endl;
+		cout << "\t|Annual Income : " << AnnualIncome << "  " << endl;
+		cout << "\t|Tax Amount Per Year : " << TaxAmountPerMonth << "" << endl;
+		cout << "\t|Tax Slab : " << TaxSlab[i + num] << "            " << endl;
 	}
 }
