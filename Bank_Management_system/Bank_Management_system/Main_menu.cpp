@@ -25,8 +25,7 @@ int Main_menu::Menu()
 	cout << "\t|\t3.Application Forms" << endl;
 	cout << "\t|\t4.Close Account" << endl;
 	cout << "\t|\t5.Open New Account" << endl;
-	cout << "\t|\t6.Customer Service Help desk" << endl;
-	cout << "\t|\t7.Offers" << endl;
+	cout << "\t|\t7.Balance Inquiry" << endl;
 	cout << "\t|________________________________________________.\n" << endl;
 
 	cin >> Main_menu_select;

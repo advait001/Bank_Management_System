@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Account_Modifications.cpp" />
+    <ClCompile Include="Balance_Inquiry.cpp" />
     <ClCompile Include="Bank_Management_system.cpp" />
     <ClCompile Include="Bank_Staff.cpp" />
     <ClCompile Include="Bank_System.cpp" />
@@ -150,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account_Modificatons.h" />
+    <ClInclude Include="Balance_Inquiry.h" />
     <ClInclude Include="Bank_Staff.h" />
     <ClInclude Include="Bank_System.h" />
     <ClInclude Include="Display.h" />

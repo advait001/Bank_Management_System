@@ -9,6 +9,7 @@
 #include "Form_Applications.h"
 #include "Money_Transaction.h"
 #include "Main_menu.h"
+#include "Balance_Inquiry.h"
 
 using namespace std;
 
@@ -38,6 +39,7 @@ void main()
 	Account_Modifications Object1;
 	Form_Applications Object2;
 	Main_menu Object3;
+	Balance_Inquiry Object4;
 
 
 	//..Greet function called 
@@ -161,24 +163,8 @@ void main()
 	//_______________________________________________________..Money transaction code..___________________________________________________
 	//..Money transaction menu
 	if (continue_code == 1) {
-		//..repairing
 
-		if (continue_code == 1)
-		{
-			Call_func_return = Object3.Withdraw_money();
-		}
-		else if (continue_code == 2)
-		{
-			Call_func_return = Object3.Account_Modification_menu();
-		}
-		else if (continue_code == 3)
-		{
-			Call_func_return = Object3.Form_Application_menu();
-		}
-		else
-		{
-			return;
-		}
+		Call_func_return = Object3.Withdraw_money();
 
 		if (Call_func_return == 1) {
 			//..Deposit Amount
@@ -272,22 +258,7 @@ void main()
 		//..Account Modification Menu
 		//________________________________________________________Account Modification code starts _________________________________
 
-		if (continue_code == 1)
-		{
-			Call_func_return = Object3.Withdraw_money();
-		}
-		else if (continue_code == 2)
-		{
-			Call_func_return = Object3.Account_Modification_menu();
-		}
-		else if (continue_code == 3)
-		{
-			Call_func_return = Object3.Form_Application_menu();
-		}
-		else
-		{
-			return;
-		}
+		Call_func_return = Object3.Account_Modification_menu();
 
 		if (Call_func_return == 1) {
 			//..Account Type
@@ -380,22 +351,8 @@ void main()
 	else if (continue_code == 3) {
 		//________________________________________________________Form Application code starts____________________________________
 
-		if (continue_code == 1)
-		{
-			Call_func_return = Object3.Withdraw_money();
-		}
-		else if (continue_code == 2)
-		{
-			Call_func_return = Object3.Account_Modification_menu();
-		}
-		else if (continue_code == 3)
-		{
-			Call_func_return = Object3.Form_Application_menu();
-		}
-		else
-		{
-			return;
-		}
+		Call_func_return = Object3.Form_Application_menu();
+
 		//..Credit Code
 		if (Call_func_return == 1) {
 			cout << "\tEnter the Following Details in Order to Apply for Credit Card \n\n" << endl;
@@ -477,4 +434,19 @@ void main()
 				
 		}
 	}
+
+	else if (continue_code == 7)
+		{
+		cout << "Enter the Account number to see its Balance" << endl;
+		Object4.Account_List();
+		cin >> Object4.Account_number;
+		Object4.Show_Balance();
+		}
+
+		//________________________________________________________Balance Inquiry code starts____________________________________
+	else
+	{
+	cout << "No function found on number : " << continue_code << endl;
+	}
+	//________________________________________________________Balance Inquiry code ends____________________________________
 }
