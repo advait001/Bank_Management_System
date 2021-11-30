@@ -26,6 +26,7 @@ int Main_menu::Menu()
 	cout << "\t|\t4.Close Account" << endl;
 	cout << "\t|\t5.Open New Account" << endl;
 	cout << "\t|\t7.Balance Inquiry" << endl;
+	cout << "\t|\t8.Tax Invoice" << endl;
 	cout << "\t|________________________________________________.\n" << endl;
 
 	cin >> Main_menu_select;
@@ -40,6 +41,7 @@ int Main_menu::Call_Function()
 	if (_Call == 0)
 	{
 		exit(0);
+		return 0;
 	}
 	else if (_Call == 1)
 	{ //..Code to be continued
