@@ -11,6 +11,7 @@
 #include "Main_menu.h"
 #include "Balance_Inquiry.h"
 #include "Tax_Invoice.h"
+#include "bankdb.h"
 
 using namespace std;
 
@@ -43,6 +44,8 @@ void main()
 	Balance_Inquiry Object4;
 	Tax_Invoice Object5;
 
+	//intialize database
+	InitDB();
 
 	//..Greet function called 
 	System.Greet();
