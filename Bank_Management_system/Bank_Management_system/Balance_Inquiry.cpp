@@ -13,6 +13,7 @@ void Balance_Inquiry:: Show_Balance()
 		if (Acc_num_Data[num] == Account_number)
 		{
 			Display_Output(num);
+			break;
 		}
 	}
 
