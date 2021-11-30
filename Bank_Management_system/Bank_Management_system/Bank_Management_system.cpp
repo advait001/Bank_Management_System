@@ -10,6 +10,7 @@
 #include "Money_Transaction.h"
 #include "Main_menu.h"
 #include "Balance_Inquiry.h"
+#include "Tax_Invoice.h"
 
 using namespace std;
 
@@ -40,6 +41,7 @@ void main()
 	Form_Applications Object2;
 	Main_menu Object3;
 	Balance_Inquiry Object4;
+	Tax_Invoice Object5;
 
 
 	//..Greet function called 
@@ -146,12 +148,12 @@ void main()
 				returned_the_value = Obj.Bank_Signup_ID(Username_,Pass_word,Re_Confirm);
 				if (returned_the_value == 0)
 				{
-					cout << "\tSign up successfull , Welcome to the bank management system" << endl;
+					cout << "\tSign up successful , Welcome to the bank management system" << endl;
 					screen.User_Detail_display();
 				}
 				else if (returned_the_value == -1)
 				{
-					cout << "\n\n\tThe password entered for re-confirmation does not match with the passord in the first coloumn !!!" << endl;
+					cout << "\n\n\tThe password entered for re-confirmation does not match with the password in the first coloumn !!!" << endl;
 					exit(0);
 				}
 		}
@@ -434,7 +436,7 @@ void main()
 				
 		}
 	}
-
+	//________________________________________________________Balance Inquiry code starts____________________________________
 	else if (continue_code == 7)
 		{
 		cout << "Enter the Account number to see its Balance" << endl;
@@ -442,11 +444,39 @@ void main()
 		cin >> Object4.Account_number;
 		Object4.Show_Balance();
 		}
+	//________________________________________________________Balance Inquiry code ends____________________________________
 
-		//________________________________________________________Balance Inquiry code starts____________________________________
+	//________________________________________________________Tax Invoice code starts____________________________________
+	else if (continue_code == 8)
+	{
+		cout << "\t----- Tax Invoice ----- " << endl;
+
+		cout << "Name : ";
+		cin >> Object5.Name1;
+
+		cout << "Income : ";
+		cin >> Object5.Income;
+
+		cout << "Phone Number : ";
+		cin >> Object5.PhnNo;
+
+		cout << "Age : ";
+		cin >> Object5.Age;
+
+		cout << "AaDhar No : ";
+		cin >> Object5.aadharNumber;
+
+		cout << "Pan Card Number : ";
+		cin >> Object5.PanCardNO;
+
+		cout << "Gender M / F / T : ";
+		cin >> Object5.Gender;
+		Object5.Tax_Invoice_Slab();
+	}
+	//________________________________________________________Tax Invoice code ends____________________________________
 	else
 	{
 	cout << "No function found on number : " << continue_code << endl;
 	}
-	//________________________________________________________Balance Inquiry code ends____________________________________
+	
 }

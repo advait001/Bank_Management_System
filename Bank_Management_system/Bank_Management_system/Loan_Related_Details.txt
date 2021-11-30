@@ -1,0 +1,7 @@
+Salary : 25000
+Total Loan Amount : 84800
+Loan Principle Amount : 80000
+Loan Interest Amount : 4800
+Total Money to be paid per month : 3261
+Reason : somethingLoan Against : nothing
+Serial Number / Registration Number : 1245

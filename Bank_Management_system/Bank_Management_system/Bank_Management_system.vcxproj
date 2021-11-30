@@ -148,6 +148,7 @@
     <ClCompile Include="Form_Applications.cpp" />
     <ClCompile Include="Main_menu.cpp" />
     <ClCompile Include="Money_Transaction.cpp" />
+    <ClCompile Include="Tax_Invoice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account_Modificatons.h" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Form_Applications.h" />
     <ClInclude Include="Main_menu.h" />
     <ClInclude Include="Money_Transaction.h" />
+    <ClInclude Include="Tax_Invoice.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

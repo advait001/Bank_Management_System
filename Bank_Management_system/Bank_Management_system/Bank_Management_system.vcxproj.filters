@@ -42,6 +42,9 @@
     <ClCompile Include="Balance_Inquiry.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tax_Invoice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bank_System.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Balance_Inquiry.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tax_Invoice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
