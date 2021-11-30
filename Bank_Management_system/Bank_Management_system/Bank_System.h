@@ -1,7 +1,9 @@
 #pragma once
+#include "Main_menu.h"
 
-class Bank_System
+class Bank_System : public Main_menu
 {
+	//..Definitions
 public :
 	char User_name[30];
 	char Password[30];
@@ -11,6 +13,7 @@ public :
 	char Phone_Number[15];
 	unsigned short age;
 
+	//..Functions
 public:
 	void Greet();
 	int Signup();

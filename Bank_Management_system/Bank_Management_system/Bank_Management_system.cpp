@@ -53,7 +53,7 @@ void main()
 	//________________________________________..Login and sign-up code..________________________________________
 	//..Working for a single persons use currently..
 
-	cout << "\n\t1) Login (existing user) \n\t2) Sign-up (new user)\n\t3) Bank Management Login\n" << endl;
+	cout << "\n\t1) Login (existing user) \n\t2) Sign-up (new user)\n\t3) Bank Management Login (bank Staff)\n\t4) Enter 0 to Exit\n" << endl;
 	cout << "\t"; cin >> number;
 
 	//..Personal details of the user 
@@ -75,7 +75,10 @@ void main()
 
 	System.Signup();
 	}
-
+	else if (number == 0)
+	{
+		exit(0);
+	}
 	//..Login code..
 	//..Take the user-name and password from the user and enter into the Login member function
 	else if (number == 1) {
