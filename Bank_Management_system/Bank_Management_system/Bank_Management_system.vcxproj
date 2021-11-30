@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="Account_Modifications.cpp" />
     <ClCompile Include="Balance_Inquiry.cpp" />
+    <ClCompile Include="bankdb.cpp" />
     <ClCompile Include="Bank_Management_system.cpp" />
     <ClCompile Include="Bank_Staff.cpp" />
     <ClCompile Include="Bank_System.cpp" />
+    <ClCompile Include="CppSQLite3.cpp" />
     <ClCompile Include="Display.cpp" />
     <ClCompile Include="Form_Applications.cpp" />
     <ClCompile Include="Main_menu.cpp" />
@@ -151,15 +153,28 @@
     <ClCompile Include="Tax_Invoice.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\Downloads\DNAssist-master\DNAssist-master\sqlite3\sqlite3.h" />
     <ClInclude Include="Account_Modificatons.h" />
     <ClInclude Include="Balance_Inquiry.h" />
+    <ClInclude Include="bankdb.h" />
     <ClInclude Include="Bank_Staff.h" />
     <ClInclude Include="Bank_System.h" />
+    <ClInclude Include="CppSQLite3.h" />
     <ClInclude Include="Display.h" />
     <ClInclude Include="Form_Applications.h" />
     <ClInclude Include="Main_menu.h" />
     <ClInclude Include="Money_Transaction.h" />
+    <ClInclude Include="sqlite3.h" />
+    <ClInclude Include="sqlite3\sqlite3.h" />
     <ClInclude Include="Tax_Invoice.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sqlite3\sqlite3-64.dll" />
+    <None Include="sqlite3\sqlite3.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="sqlite3\sqlite3-64.lib" />
+    <Library Include="sqlite3\sqlite3.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
