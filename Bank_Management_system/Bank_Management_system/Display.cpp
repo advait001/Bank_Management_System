@@ -14,7 +14,7 @@ void User_Display::User_Detail_display()
 	in >> Phone_Number;
 	in >> Email;
 
-	//..Print the details of the text file in an ordered manner 
+	//..Print the details of the text file in an ordered manner z
 	cout << "._______________________________________________________________________." << endl;
 	cout << "|																		" << endl;
 	cout << "|																		" << endl;

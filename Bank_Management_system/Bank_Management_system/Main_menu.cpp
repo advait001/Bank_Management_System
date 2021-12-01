@@ -6,6 +6,7 @@ using namespace std;
 
 void Main_menu::Line_func(unsigned short Upper_or_Lower)
 {
+	//..presentation code 
 	if (Upper_or_Lower == 1){
 		cout << "\n.___________________________________." << endl;
 	}
@@ -13,11 +14,13 @@ void Main_menu::Line_func(unsigned short Upper_or_Lower)
 	{
 		cout << ".___________________________________.\n" << endl;
 	}
+	//..No calculations included
 }
 
 int Main_menu::Menu()
 {
 	//..code pending
+	//..Main menu print
 	cout << "\n\t.________________________________________________." << endl;
 	cout << "\t|                   Main Menu" << endl;
 	cout << "\t|\t1.Transactions and Transfer Money" << endl;
@@ -29,22 +32,27 @@ int Main_menu::Menu()
 	cout << "\t|\t8.Tax Invoice" << endl;
 	cout << "\t|________________________________________________.\n" << endl;
 
+	//..Main menu value is returned in Main_menu_select
 	cin >> Main_menu_select;
 	return Main_menu_select;
 }
 
 int Main_menu::Call_Function()
 {
+	//..call Function 
+	//..this function is used to ask the user whether they want to go back to the main menu or exit the program 
 	cout << "\n\tEnter 1 to go back to the main menu or Enter 0 to exit through the code" << endl;
 	cin >> _Call;
 
 	if (_Call == 0)
 	{
+		//..if the user wants to exit the program
 		exit(0);
 		return 0;
 	}
 	else if (_Call == 1)
-	{ //..Code to be continued
+	{
+		//..if user wants to back to the main menu
 		Main_return_value = Menu();
 		return Main_return_value;
 	}
@@ -52,6 +60,7 @@ int Main_menu::Call_Function()
 
 int Main_menu::Withdraw_money()
 {
+	//..transaction money member function object selection menu
 	Line_func(1);
 	cout << "\t1.Deposit Amount\n" << endl;
 	cout << "\t2.Transfer Amount\n" << endl;
@@ -64,6 +73,7 @@ int Main_menu::Withdraw_money()
 
 int Main_menu::Account_Modification_menu()
 {
+	//..Account modification member function object selection menu
 	Line_func(1);
 	cout << "1. Change Account Type" << endl;
 	cout << "2. Change Account Details" << endl;
@@ -76,6 +86,7 @@ int Main_menu::Account_Modification_menu()
 
 int Main_menu::Form_Application_menu()
 {
+	//..Form Application member function object selection menu
 	Line_func(1);
 	cout << "1.Credit Card" << endl;
 	cout << "2.Debit Card" << endl;

@@ -1,6 +1,7 @@
 #pragma once
 class Main_menu
 {
+	//..Definitions called 
 public: 
 	unsigned short _Call;
 	unsigned short Input;
@@ -8,6 +9,7 @@ public:
 	unsigned short Value;
 	unsigned short Main_return_value;
 	unsigned short Upper_or_Lower;
+	//..Member function called
 public:
 	int Menu();
 	int Call_Function();

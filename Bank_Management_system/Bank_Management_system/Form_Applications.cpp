@@ -6,7 +6,6 @@ using namespace std;
 
  void Form_Applications::PersonalInformation()
  {
-
 	cout << "Name :";
 	cin >> name;
 
