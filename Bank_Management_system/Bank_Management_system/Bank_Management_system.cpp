@@ -4,15 +4,15 @@ The system provides the access to the customer to
 	1) create an account, 
 	2) deposit cash
 	3) withdraw the cash from his account, also to view reports of all accounts present.	
-The system is developed with the following funtions added in it 
-	1) Modify any account . Income account to savings account/Detamt Account 
+The system is developed with the following functions added in it 
+	1) Modify any account . Income account to savings account/De-mat Account 
 	2) Application forms .
 		1. Apply for different services like:
 		2. Credit card
 		3. Debit Card
 		4. Cheque
 		5. Loan Application 
-		6. Tax Invoice reciept etc.
+		6. Tax Invoice receipt etc.
 It also supports generating new and discarding old accounts .
 Bank Balance Inquiry is also supported .
 Skill sets , logics and algorithms used in the system are :
@@ -24,7 +24,7 @@ Skill sets , logics and algorithms used in the system are :
 	6) Database (SQLite)
 	7) Linked Lists
 	8) Comments 
-Additional use use git hub is done to professionalise the work and make is easily accessible to all
+Additional use git hub is done to professionalize the work and make is easily accessible to all
 and also help the entire team to work on it simultaneously.
 */
 
