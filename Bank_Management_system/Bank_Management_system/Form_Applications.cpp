@@ -6,6 +6,7 @@ using namespace std;
 
  void Form_Applications::PersonalInformation()
  {
+
 	 //..Same Function used for credit, debit, cheque book, and loan application
 	cout << "Name :";
 	cin >> name;

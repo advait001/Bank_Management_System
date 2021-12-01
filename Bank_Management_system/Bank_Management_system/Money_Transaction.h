@@ -1,14 +1,14 @@
 #pragma once
+#include "Bank_System.h"
 #include<iostream>
 
-class Money_Transaction
+class Money_Transaction : public Bank_System //..single level inheritance given
 {
 public :
-	static const int pincode = 1234; // **this is to be removed when the code gets merged with the login details part 
-public:
+	char pincode[30]; //..pin to be taken
 	unsigned short  AccountNo1;//This is for user
 	unsigned short  AccountNo2;//This is for person receiving amount
-	unsigned short PIN;
+	//unsigned short PIN;
 	unsigned int Amount;
 	unsigned int BankBalance;
 public:

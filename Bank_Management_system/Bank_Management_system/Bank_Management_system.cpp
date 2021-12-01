@@ -35,14 +35,14 @@ void main()
 
 	//..Make Systems of the class
 	Bank_System System;
-	Bank_Staff Obj;
+	Bank_Staff Staff;
 	User_Display screen;
-	Money_Transaction Object;
-	Account_Modifications Object1;
-	Form_Applications Object2;
-	Main_menu Object3;
-	Balance_Inquiry Object4;
-	Tax_Invoice Object5;
+	Money_Transaction Money_Trans;
+	Account_Modifications Acc_Modification;
+	Form_Applications Form;
+	Main_menu Menu_;
+	Balance_Inquiry Balance_;
+	Tax_Invoice Tax;
 
 	//intialise database
 	InitDB();
@@ -53,7 +53,7 @@ void main()
 	//________________________________________..Login and sign-up code..________________________________________
 	//..Working for a single persons use currently..
 
-	cout << "\n\t1) Login (existing user) \n\t2) Sign-up (new user)\n\t3) Bank Management Login\n" << endl;
+	cout << "\n\t1) Login (existing user) \n\t2) Sign-up (new user)\n\t3) Bank Management Login (bank Staff)\n\t4) Enter 0 to Exit\n" << endl;
 	cout << "\t"; cin >> number;
 
 	//..Personal details of the user 
@@ -75,7 +75,10 @@ void main()
 
 	System.Signup();
 	}
-
+	else if (number == 0)
+	{
+		exit(0);
+	}
 	//..Login code..
 	//..Take the user-name and password from the user and enter into the Login member function
 	else if (number == 1) {
@@ -102,7 +105,7 @@ void main()
 			cin >> password;
 
 			//..check whether the password and the reconfirmed password match with each other 
-			returned_the_value = Obj.Login(username, password);
+			returned_the_value = Staff.Login(username, password);
 			if (returned_the_value == 0)
 			{
 				//..username and password matched successfully
@@ -130,16 +133,16 @@ void main()
 
 			cout << "\n\tEnter the following details to sign-up as a new staff member in our bank." << endl;
 			cout << "\n\tFirst Name: ";
-			cin >> Obj.name;
+			cin >> Staff.name;
 			cout << "\tPhone number: ";
-			cin >> Obj.Phone_Number;
+			cin >> Staff.Phone_Number;
 			cout << "\tStaff-ID: ";
 			cin >> Staff_ID;
 			cout << "\tAge: ";
-			cin >> Obj.age;
+			cin >> Staff.age;
 
 			ofstream write("Staff_Personal_Details.txt");
-			write << Obj.name << "\n" << Obj.Phone_Number << "\n" << Staff_ID << "\n" << Obj.age << endl;
+			write << Staff.name << "\n" << Staff.Phone_Number << "\n" << Staff_ID << "\n" << Staff.age << endl;
 
 			cout << "\tUser-name: ";
 			cin >> Username_;
@@ -148,7 +151,7 @@ void main()
 			cout << "\tReconfirm the Password: ";
 			cin >> Re_Confirm;
 
-				returned_the_value = Obj.Bank_Signup_ID(Username_,Pass_word,Re_Confirm);
+				returned_the_value = Staff.Bank_Signup_ID(Username_,Pass_word,Re_Confirm);
 				if (returned_the_value == 0)
 				{
 					cout << "\tSign up successful , Welcome to the bank management system" << endl;
@@ -164,26 +167,26 @@ void main()
 	//..________________________________________Login and Signup Code end..________________________________________
 
 	
-	continue_code = Object3.Call_Function();
+	continue_code = Menu_.Call_Function();
 	//_______________________________________________________..Money transaction code..___________________________________________________
 	//..Money transaction menu
 	if (continue_code == 1) {
 
-		Call_func_return = Object3.Withdraw_money();
+		Call_func_return = Menu_.Withdraw_money();
 
 		if (Call_func_return == 1) {
 			//..Deposit Amount
 			cout << "--------------------------------------------------------------------------------------------------------------------------------\n";
 			cout << "\tEnter Your Account Number : ";
-			cin >> Object.AccountNo1;
+			cin >> Money_Trans.AccountNo1;
 
 			cout << "\tEnter Amount You Want To Deposit : ";
-			cin >> Object.Amount;
+			cin >> Money_Trans.Amount;
 
-			cout << "\tEnter Your PIN : ";
-			cin >> Object.PIN;
+			cout << "\tEnter password : ";
+			cin >> Money_Trans.pincode;
 
-			returned_value = Object.DepositAmount();
+			returned_value = Money_Trans.DepositAmount();
 			if (returned_value == 0)
 			{
 				cout << "\tTransaction successful" << endl;
@@ -192,7 +195,7 @@ void main()
 			}
 			else if (returned_value == -1)
 			{
-				cout << "\tTransaction failed due to wrong pin entered" << endl;
+				cout << "\tTransaction failed due to wrong password entered" << endl;
 					
 			}
 		}
@@ -200,18 +203,18 @@ void main()
 		if (Call_func_return == 2) {
 			cout << "-----------------------------------------------------------------------------------------------------------------------------\n";
 			cout << "\tAccount No From *: ";
-			cin >> Object.AccountNo1;
+			cin >> Money_Trans.AccountNo1;
 
 			cout << "\tAccount No To *:";
-			cin >> Object.AccountNo2;
+			cin >> Money_Trans.AccountNo2;
 
 			cout << "\tEnter Amount You want to Transfer : ";
-			cin >> Object.Amount;
+			cin >> Money_Trans.Amount;
 
-			cout << "\tEnter Your PIN : ";
-			cin >> Object.PIN;
+			cout << "\tEnter password : ";
+			cin >> Money_Trans.pincode;
 
-			returned_value = Object.TransferAmount();
+			returned_value = Money_Trans.TransferAmount();
 			if (returned_value == 0)
 			{
 				cout << "\tTransaction Successful" << endl;
@@ -220,7 +223,7 @@ void main()
 			}
 			else if (returned_value == -1)
 			{
-				cout << "\tTransaction failed due to wrong pin entered" << endl;
+				cout << "\tTransaction failed due to wrong password entered" << endl;
 					
 			}
 			else if (returned_value == -2) {
@@ -233,15 +236,15 @@ void main()
 		if (Call_func_return == 3) {
 			cout << "----------------------------------------------------------------------------------------------------------------------------\n";
 			cout << "\tEnter Your Account No : ";
-			cin >> Object.AccountNo1;
+			cin >> Money_Trans.AccountNo1;
 
 			cout << "\tEnter Amount You Want to WithDraw :";
-			cin >> Object.Amount;
+			cin >> Money_Trans.Amount;
 
-			cout << "\tEnter Your PIN : ";
-			cin >> Object.PIN;
+			cout << "\tEnter password : ";
+			cin >> Money_Trans.pincode;
 
-			returned_value = Object.WithdrawAmount();
+			returned_value = Money_Trans.WithdrawAmount();
 			if (returned_value == 0) {
 				cout << "\tCollect Your Cash" << endl;
 					
@@ -263,16 +266,16 @@ void main()
 		//..Account Modification Menu
 		//________________________________________________________Account Modification code starts _________________________________
 
-		Call_func_return = Object3.Account_Modification_menu();
+		Call_func_return = Menu_.Account_Modification_menu();
 
 		if (Call_func_return == 1) {
 			//..Account Type
 			cout << "\tChange From Current Account To Savings Account.." << endl;
 
 			cout << "\tEnter The Amount Of Money You Want To Transfer From Current Account To Savings Account : ";
-			cin >> Object1.TransferAmount;
+			cin >> Acc_Modification.TransferAmount;
 
-			returned_value = Object1.AccountType();
+			returned_value = Acc_Modification.AccountType();
 			if (returned_value == -2) {
 				cout << "\tInvalid Input";
 					
@@ -289,15 +292,15 @@ void main()
 				cout << "\t--enter the time period you are going to keep the money in the savings account--\n " << endl;
 
 				cout << "\tdays : ";
-				cin >> Object1.Days;
+				cin >> Acc_Modification.Days;
 
 				cout << "\tmonths :";
-				cin >> Object1.Months;
+				cin >> Acc_Modification.Months;
 
 				cout << "\tyears : ";
-				cin >> Object1.Years;
+				cin >> Acc_Modification.Years;
 
-				Object1.ConversionAndFinalAmount(returned_value);
+				Acc_Modification.ConversionAndFinalAmount(returned_value);
 
 				cout << "----Calculating Total Number of Days the Account Holder is going to keep the Money Amount in the Savings Account----" << endl;
 					
@@ -307,15 +310,15 @@ void main()
 		else if (Call_func_return == 2) {
 			//..Account Details
 			cout << "\tAccount Number :";
-			cin >> Object1.AccountNo;
+			cin >> Acc_Modification.AccountNo;
 
 			cout << "\tAccount Holder Name : ";
-			cin >> Object1.CustomerName;
+			cin >> Acc_Modification.CustomerName;
 
 			cout << "\tBranch Name : ";
-			cin >> Object1.BranchName;
+			cin >> Acc_Modification.BranchName;
 
-			Object1.AccountDetails();
+			Acc_Modification.AccountDetails();
 				
 
 			///..Account Details Ends
@@ -325,24 +328,24 @@ void main()
 			//..User Details
 
 			cout << "\tName : ";
-			cin >> Object1.Name;
+			cin >> Acc_Modification.Name;
 
 			cout << "\tAddress : ";
-			cin >> Object1.Address;
+			cin >> Acc_Modification.Address;
 
 			cout << "\tPhone Number : ";
-			cin >> Object1.PhoneNo;
+			cin >> Acc_Modification.PhoneNo;
 
 			cout << "\tDate of Birth (DD/MM/YEAR): ";
-			cin >> Object1.day >> Object1.month >> Object1.year;
+			cin >> Acc_Modification.day >> Acc_Modification.month >> Acc_Modification.year;
 
 			cout << "\tAaDhar Number : ";
-			cin >> Object1.AadharNo;
+			cin >> Acc_Modification.AadharNo;
 
 			cout << "\tEmail Id : ";
-			cin >> Object1.EmailId;
+			cin >> Acc_Modification.EmailId;
 
-			Object1.UserDetails();
+			Acc_Modification.UserDetails();
 				
 			//..User Details Ends
 		}
@@ -356,13 +359,13 @@ void main()
 	else if (continue_code == 3) {
 		//________________________________________________________Form Application code starts____________________________________
 
-		Call_func_return = Object3.Form_Application_menu();
+		Call_func_return = Menu_.Form_Application_menu();
 
 		//..Credit Code
 		if (Call_func_return == 1) {
 			cout << "\tEnter the Following Details in Order to Apply for Credit Card \n\n" << endl;
 
-			Object2.CreditCard();
+			Form.CreditCard();
 
 			cout << "\tYou Will be Notified for Further Procedure or Application Approval" << endl;
 				
@@ -370,7 +373,7 @@ void main()
 		else if (Call_func_return == 2) {
 			cout << "\tEnter the Following Details in Order to Apply for Debit Card \n\n" << endl;
 
-			Object2.DebitCard();
+			Form.DebitCard();
 
 			cout << "\tYou Will be Notified for Further Procedure or Application Approval" << endl;
 				
@@ -378,7 +381,7 @@ void main()
 		else if (Call_func_return == 3) {
 			cout << "\tEnter the Following Details in Order to Apply for Cheque Book \n\n" << endl;
 
-			Object2.ChequeBook();
+			Form.ChequeBook();
 
 			cout << "\tYou Will be Notified for Further Procedure or Application Approval" << endl;
 				
@@ -386,31 +389,31 @@ void main()
 		else if (Call_func_return == 4) {
 			cout << "\tEnter the Following Details in Order to Apply for Loan \n\n" << endl;
 
-			Object2.PersonalInformation();
+			Form.PersonalInformation();
 
 			cout << "\tEnter Your Salary : ";
-			cin >> Object2.Salary;
+			cin >> Form.Salary;
 
 			cout << "\tLoan Amount : ";
-			cin >> Object2.Loan_Amount;
+			cin >> Form.Loan_Amount;
 
 			cout << "\tDays : ";
-			cin >> Object2.Days;
+			cin >> Form.Days;
 
 			cout << "\tMonths : ";
-			cin >> Object2.Months;
+			cin >> Form.Months;
 
 			cout << "\tYears : ";
-			cin >> Object2.Years;
-			Return_Total_Time = Object2.Conversions();
+			cin >> Form.Years;
+			Return_Total_Time = Form.Conversions();
 
-			Object2.Loan(Return_Total_Time);
+			Form.Loan(Return_Total_Time);
 
-			cout << "\tYour Principal Amount : " << Object2.Loan_Amount << endl;
-			cout << "\tYour Interest Amount : " << Object2.Interest_Amount << endl;
-			cout << "\tTotal Amount You have Pay : " << Object2.Total_Amount << endl;
+			cout << "\tYour Principal Amount : " << Form.Loan_Amount << endl;
+			cout << "\tYour Interest Amount : " << Form.Interest_Amount << endl;
+			cout << "\tTotal Amount You have Pay : " << Form.Total_Amount << endl;
 
-			cout << "\tMoney To Be Paid Per Month : " << Object2.EMI_Amount << endl;
+			cout << "\tMoney To Be Paid Per Month : " << Form.EMI_Amount << endl;
 
 			cout << "------Reason For Taking Loan------ " << endl;
 			cout << "\t1.Educational Loan : " << endl;
@@ -419,9 +422,9 @@ void main()
 			cout << "\t4.Home Loan : " << endl;
 			cout << "\t5.Business Loan : " << endl;
 			cout << "\t6.Others" << endl;
-			cin >> Object2.N;
+			cin >> Form.N;
 
-			Object2.ReasonForTakingLoan();
+			Form.ReasonForTakingLoan();
 
 			cout << "\t-----Loan Against What-----" << endl;
 			cout << "\t1.Against Home" << endl;
@@ -429,9 +432,9 @@ void main()
 			cout << "\t3.Against Property" << endl;
 			cout << "\t4.Against Business Shares" << endl;
 			cout << "\t5.Others" << endl;
-			cin >> Object2.N1;
+			cin >> Form.N1;
 
-			Object2.LoanAgainstWhat();
+			Form.LoanAgainstWhat();
 				
 		}
 		else {
@@ -443,9 +446,9 @@ void main()
 	else if (continue_code == 7)
 		{
 		cout << "Enter the Account number to see its Balance" << endl;
-		Object4.Account_List();
-		cin >> Object4.Account_number;
-		Object4.Show_Balance();
+		Balance_.Account_List();
+		cin >> Balance_.Account_number;
+		Balance_.Show_Balance();
 		}
 	//________________________________________________________Balance Inquiry code ends____________________________________
 
@@ -455,29 +458,29 @@ void main()
 		cout << "\t----- Tax Invoice ----- " << endl;
 
 		cout << "Name : ";
-		cin >> Object5.Name1;
+		cin >> Tax.Name1;
 
 		cout << "Account Number : ";
 		cin >> Object5.AccountNumber;
 
 		cout << "Income : ";
-		cin >> Object5.Income;
+		cin >> Tax.Income;
 
 		cout << "Phone Number : ";
-		cin >> Object5.PhnNo;
+		cin >> Tax.PhnNo;
 
 		cout << "Age : ";
-		cin >> Object5.Age;
+		cin >> Tax.Age;
 
 		cout << "AaDhar No : ";
-		cin >> Object5.aadharNumber;
+		cin >> Tax.aadharNumber;
 
 		cout << "Pan Card Number : ";
-		cin >> Object5.PanCardNO;
+		cin >> Tax.PanCardNO;
 
 		cout << "Gender M / F / T : ";
-		cin >> Object5.Gender;
-		Object5.Tax_Invoice_Slab();
+		cin >> Tax.Gender;
+		Tax.Tax_Invoice_Slab();
 	}
 	//________________________________________________________Tax Invoice code ends____________________________________
 	else

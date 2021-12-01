@@ -1,27 +1,36 @@
 #include "Money_Transaction.h"
+#include "Bank_System.h"
 #include<iostream>
+#include <fstream>
 
 using namespace std;
 
 int Money_Transaction::DepositAmount() {
 
-	while(true) {
-		//.. Check if the pin is correct 
-		if (pincode == PIN){
-			BankBalance = BankBalance + Amount;
-			return 0;
-			break;
-		}
-		else
-		{
-			//..if pin is wrong
-			return - 1;
-		}
+	//.. Check if the pin is correct 
+	ifstream in("Text_Code.txt");
+	char Username[30];
+	char Password[30];
+	in >> Username;
+	in >> Password;
+	if (strcmp(pincode,Password)==0){
+		BankBalance = BankBalance + Amount;
+		return 0;
+	}
+	else
+	{
+		//..if pin is wrong
+		return - 1;
 	}
 }
 int Money_Transaction::TransferAmount() {
 	while(true){
-		if (pincode == PIN){ //..check if the pin is correct
+		ifstream in("Text_Code.txt");
+		char Username[30];
+		char Password[30];
+		in >> Username;
+		in >> Password;
+		if (strcmp(pincode, Password)) { //..check if the pin s correct
 			if (AccountNo1 > Amount) { //..check if the amount to be transfered is less than the Bank Balance 
 				AccountNo1 = AccountNo1 - Amount;
 				AccountNo2 = AccountNo2 + Amount;
@@ -42,7 +51,12 @@ int Money_Transaction::TransferAmount() {
 }
 int Money_Transaction::WithdrawAmount() {
 	while (true){
-		if (pincode == PIN){//..check if the pin is correct
+		ifstream in("Text_Code.txt");
+		char Username[30];
+		char Password[30];
+		in >> Username;
+		in >> Password;
+		if (strcmp(pincode, Password)) {//..check if the pin is correct
 			if (BankBalance >= Amount){//..check if the amount you want to withdraw is available
 			BankBalance = BankBalance - Amount;
 			return 0;
