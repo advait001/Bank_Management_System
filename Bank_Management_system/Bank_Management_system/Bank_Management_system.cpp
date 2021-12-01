@@ -10,7 +10,7 @@ The system is developed with the following functions added in it
 		1. Apply for different services like:
 		2. Credit card
 		3. Debit Card
-		4. Cheque
+		4. Cheque 
 		5. Loan Application 
 		6. Tax Invoice receipt etc.
 It also supports generating new and discarding old accounts .
@@ -22,8 +22,10 @@ Skill sets , logics and algorithms used in the system are :
 	4) File Operations and Data Handling 
 	5) Searching and Sorting 
 	6) Database (SQLite)
-	7) Linked Lists
+	7) Linked Lists Single
 	8) Comments 
+	9) Stacks  
+	10) Queue
 Additional use git hub is done to professionalize the work and make is easily accessible to all
 and also help the entire team to work on it simultaneously.
 */
