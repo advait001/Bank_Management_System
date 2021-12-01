@@ -491,7 +491,7 @@ void main()
 		cin >> Tax.Name1;
 
 		cout << "Account Number : ";
-		cin >> Object5.AccountNumber;
+		cin >> Tax.AccountNumber;
 
 		cout << "Income : ";
 		cin >> Tax.Income;
