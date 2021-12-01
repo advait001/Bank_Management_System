@@ -520,5 +520,3 @@ void main()
 	{
 	cout << "No function found on number : " << continue_code << endl;
 	}
-	
-}
