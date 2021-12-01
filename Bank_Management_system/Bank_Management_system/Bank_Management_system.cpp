@@ -1,3 +1,33 @@
+/*This is a Bank Management System project
+It is used to Keep the records of clients,employee etc in Bank. ... 
+The system provides the access to the customer to 
+	1) create an account, 
+	2) deposit cash
+	3) withdraw the cash from his account, also to view reports of all accounts present.	
+The system is developed with the following funtions added in it 
+	1) Modify any account . Income account to savings account/Detamt Account 
+	2) Application forms .
+		1. Apply for different services like:
+		2. Credit card
+		3. Debit Card
+		4. Cheque
+		5. Loan Application 
+		6. Tax Invoice reciept etc.
+It also supports generating new and discarding old accounts .
+Bank Balance Inquiry is also supported .
+Skill sets , logics and algorithms used in the system are :
+	1) Classes and Objects 
+	2) Inheritance of classes and member functions 
+	3) Pointers and Arrays 
+	4) File Operations and Data Handling 
+	5) Searching and Sorting 
+	6) Database (SQLite)
+	7) Linked Lists
+	8) Comments 
+Additional use use git hub is done to professionalise the work and make is easily accessible to all
+and also help the entire team to work on it simultaneously.
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <fstream>
