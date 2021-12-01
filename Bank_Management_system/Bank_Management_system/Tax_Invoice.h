@@ -6,9 +6,10 @@ public:
 	char Name1[30];
 	char PhnNo[15];
 	unsigned short Age;
-	unsigned int aadharNumber;
+	char aadharNumber;
 	char PanCardNO[20];
 	char Gender[1];
+	char AccountNumber;
 	unsigned long AnnualIncome;
 	unsigned int TaxAmountPerMonth;
 	const char* TaxSlab[7] = { "Slab 1","Slab 2","Slab 3","Slab 4","Slab 5","Slab 6","Slab 7" };

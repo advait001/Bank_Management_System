@@ -4,14 +4,12 @@ class Form_Applications
 {
 public:
 	char name[20];
-	unsigned int PhnNo;
+	char PhnNo;
 	unsigned short Age;
-	unsigned int AccNumber;
-	unsigned int aadharNumber;
-	unsigned int SalarySlipNo;
+	char AccNumber;
+	char aadharNumber;
+	char SalarySlipNo;
 	char PanCardNO[20];
-	unsigned int loanamount;
-	//char Reason2[30];
 	unsigned short Days;
 	unsigned short Months;
 	unsigned short Years;
@@ -37,8 +35,8 @@ public:
 	const unsigned int MIN_Amount = 10000;
 	const unsigned int Interest_Rate = 6;
 	unsigned short TotalTime;
-	const char* Reason2[100] = { "Educational Loan","Personal Loan","Car Loan","Home Loan","Business Loan" };
-	const char* LoanAgainst[100] = { "Home","Car","Property","Business Shares" };
+	const char* Reason2[100] = { "Educational Loan","Personal Loan","Car Loan","Home Loan","Business Loan" };//..Pointer
+	const char* LoanAgainst[100] = { "Home","Car","Property","Business Shares" };//..Pointer
 	char Others1[30];
 	unsigned int RegistrationNo;
 public:

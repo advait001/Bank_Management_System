@@ -6,7 +6,7 @@ using namespace std;
 
  void Form_Applications::PersonalInformation()
  {
-
+	 //..Same Function used for credit, debit, cheque book, and loan application
 	cout << "Name :";
 	cin >> name;
 
@@ -28,32 +28,36 @@ using namespace std;
 	cout << "Pan Card Number : ";
 	cin >> PanCardNO;
 
+	//..File Operations for noting down details
 	ofstream write("UserAccountDetails.txt");
 	write <<"Name : " << name << "\n" <<"Phone Number : "<< PhnNo << "\n" <<"Account Number : " << AccNumber << "\n" <<"Salary SLip No : " <<  SalarySlipNo << "\n" <<"AaDhar Number : "<< aadharNumber << "\n" <<"Pan Card Number : "<< PanCardNO << endl;
 
 }
 void Form_Applications:: CreditCard () 
 {
+	//..Calling same function as above
 	PersonalInformation();
 }
 void Form_Applications :: DebitCard()
 {
+	//..Calling same function as above
 	PersonalInformation();
 }
 void Form_Applications::ChequeBook()
 {
+	//..Calling same function as above
 	PersonalInformation();
 }
 void Form_Applications ::Loan(unsigned short TotalTime)
 {
-	if (Loan_Amount > MIN_Amount && Loan_Amount < MAX_Amount)
+	if (Loan_Amount > MIN_Amount && Loan_Amount < MAX_Amount)//..Comparing Loan Amount 
 	{
-		//..Calculation part 
-		Interest_Amount = (Interest_Rate * Loan_Amount) / 100;
-		Total_Amount = Interest_Amount + Loan_Amount;
-		EMI_Amount = Total_Amount / TotalTime;
-		if (Salary > EMI_Amount)
-		{
+		//..Compound Interest
+		Interest_Amount = (Interest_Rate * Loan_Amount) / 100;//..For Knowing the interest amount 
+		Total_Amount = Interest_Amount + Loan_Amount;//..Total Amount That we have to pay adding interest amount and loan amount 
+		EMI_Amount = Total_Amount / TotalTime;//..Calculations for money to be paid per month 
+		if (Salary > EMI_Amount)//..comparing salary with EMI amount 
+		{//..Printing Details 
 			cout << ".___________________________________________________________________________." << endl;
 			cout << "|  Loan Granted..." << endl;
 			cout << "|  Loan Amount Granted: " << Loan_Amount << endl;
@@ -65,6 +69,7 @@ void Form_Applications ::Loan(unsigned short TotalTime)
 		}
 		else
 		{
+			//..If the if condition is not satisfied
 			cout << "Loan cannot be granted as your salary amount is less than the amount to be paid every month." << endl;
 		}
 	}
@@ -113,6 +118,7 @@ int Form_Applications::Conversions()
 	return TotalTime;
 }
 void Form_Applications::ReasonForTakingLoan() {
+	//..Using File Operation for writing down the details related to loan
 	ofstream write("Loan_Related_Details.txt");
 	write << "Salary : " << Salary << "\n" << "Total Loan Amount : " << Total_Amount << "\n" << "Loan Principle Amount : " << Loan_Amount << "\n" << "Loan Interest Amount : " << Interest_Amount << "\n" << "Total Money to be paid per month : " << EMI_Amount << endl;
 	for (int i = 0; i < 1; i++) {
@@ -139,8 +145,10 @@ void Form_Applications::ReasonForTakingLoan() {
 	}
 }
 void Form_Applications::LoanAgainstWhat() {
+	//..File Operation for writing down the details of Loan Against Part
 	ofstream write("Loan_Related_Details.txt", ios::app);
-	for (int i = 0; i < 1; i++) {
+	for (int i = 0; i < 1; i++)
+	{
 		if (N1 == 1) {
 			write << "Loan Against : " << LoanAgainst[i] << endl;
 			cout << "Home Registration Number : ";

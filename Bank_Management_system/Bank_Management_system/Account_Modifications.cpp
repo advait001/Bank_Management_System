@@ -6,7 +6,7 @@ using namespace std;
 
 int Account_Modifications::AccountType() {
 	if (CurrentBalance > TransferAmount) {
-		
+		//..Updating your account balances
 		CurrentBalance = CurrentBalance - TransferAmount;
 		SavingsAccountBalance = SavingsAccountBalance + TransferAmount;
 		return SavingsAccountBalance;
@@ -16,59 +16,6 @@ int Account_Modifications::AccountType() {
 		return -1;
 	}
 }
-
-//..code for compounding 
-//int Account_Modifications::ConversionAndFinalAmount(unsigned short Days, unsigned short Months, unsigned short Years, unsigned short toggle) {
-//	if (toggle == -1 || toggle == -2 || toggle == -3) { 
-//		return 0;
-//	}
-//	else if (toggle == 0)
-//	{
-//		//..This Logic is for Month Conversion 
-//		if (Months % 2 == 0) { //..4
-//		//..Month Conversion into Days if User Enter a Odd Number 
-//			num = Months / 2;
-//			even = num * 30;
-//			odd = num * 31;
-//			MonthConversion = even + odd;
-//
-//		}
-//		else if (Months % 2 != 0) {
-//			//..Month Conversion into Days if User Enter a Even Number 
-//			Months = Months - 1;
-//			num = Months / 2;
-//			even = num * 30;
-//			odd = num * 31;
-//			MonthConversion = even + odd + 31;
-//
-//		}
-//		//..This Logic is for Year Conversion 
-//		if (Years < 4) {
-//		//..Normal Year Conversion into days
-//			YearConversion = OneYear * Years;
-//
-//		}
-//		else if(Years % 4 == 0){//..Changes to be Checked
-//			//..Conversion for Leap Year into days
-//			TotalLeapYear = Years / 4;
-//			NonLeapYear = Years - TotalLeapYear;
-//			YearConversion = (NonLeapYear * 365) + (TotalLeapYear * 366);
-//
-//		}
-//		//..Adding Total Number Of days
-//		TotalNumberOfDays = MonthConversion + YearConversion + Days;
-//		unsigned int temp = SavingsAccountBalance;
-//		TotalTime = TotalNumberOfDays / 30; 
-//		for (int i = 0; i < TotalTime; i++) {
-//			//..compound the money and re-update the savings_account balance
-//			unsigned int interest_amount;
-//			interest_amount = SavingsAccountBalance % InterestRate;
-//			SavingsAccountBalance = SavingsAccountBalance + interest_amount;
-//		}
-//		Savings_Account_returns(SavingsAccountBalance,temp);
-//		return 0;
-//	}
-//}
 
 int Account_Modifications::ConversionAndFinalAmount(unsigned int returned_value)
 {
@@ -102,12 +49,12 @@ int Account_Modifications::ConversionAndFinalAmount(unsigned int returned_value)
 				YearConversion = OneYear * Years;
 
 			}
-			else if (Years % 4 == 0) {//..Changes to be Checked  7
+			else if (Years % 4 == 0) {
 				//..Conversion for Leap Year into days
 				TotalLeapYear = Years / 4;
 				NonLeapYear = Years - TotalLeapYear;
 				YearConversion = (NonLeapYear * 365) + (TotalLeapYear * 366);
-				//..2556
+			
 			}
 			//..Adding Total Number Of days
 			TotalNumberOfDays = MonthConversion + YearConversion + Days;

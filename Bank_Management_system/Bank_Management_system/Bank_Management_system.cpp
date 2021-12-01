@@ -44,7 +44,7 @@ void main()
 	Balance_Inquiry Object4;
 	Tax_Invoice Object5;
 
-	//intialize database
+	//intialise database
 	InitDB();
 
 	//..Greet function called 
@@ -456,6 +456,9 @@ void main()
 
 		cout << "Name : ";
 		cin >> Object5.Name1;
+
+		cout << "Account Number : ";
+		cin >> Object5.AccountNumber;
 
 		cout << "Income : ";
 		cin >> Object5.Income;

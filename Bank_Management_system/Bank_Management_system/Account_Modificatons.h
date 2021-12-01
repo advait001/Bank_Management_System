@@ -31,11 +31,11 @@ public:
 	//..For User Details
 	char Name [20];
 	char Address[20];
-	unsigned int PhoneNo;
+	char PhoneNo;
 	unsigned short day;
 	unsigned short month;
 	unsigned short year;
-	unsigned int AadharNo;
+	char AadharNo;
 	char EmailId[30];
 	//..For User Authority
 public:
