@@ -183,8 +183,8 @@ void main()
 			cout << "\tEnter Amount You Want To Deposit : ";
 			cin >> Money_Trans.Amount;
 
-			cout << "\tEnter Your PIN : ";
-			cin >> Money_Trans.PIN;
+			cout << "\tEnter password : ";
+			cin >> Money_Trans.pincode;
 
 			returned_value = Money_Trans.DepositAmount();
 			if (returned_value == 0)
@@ -195,7 +195,7 @@ void main()
 			}
 			else if (returned_value == -1)
 			{
-				cout << "\tTransaction failed due to wrong pin entered" << endl;
+				cout << "\tTransaction failed due to wrong password entered" << endl;
 					
 			}
 		}
@@ -211,8 +211,8 @@ void main()
 			cout << "\tEnter Amount You want to Transfer : ";
 			cin >> Money_Trans.Amount;
 
-			cout << "\tEnter Your PIN : ";
-			cin >> Money_Trans.PIN;
+			cout << "\tEnter password : ";
+			cin >> Money_Trans.pincode;
 
 			returned_value = Money_Trans.TransferAmount();
 			if (returned_value == 0)
@@ -223,7 +223,7 @@ void main()
 			}
 			else if (returned_value == -1)
 			{
-				cout << "\tTransaction failed due to wrong pin entered" << endl;
+				cout << "\tTransaction failed due to wrong password entered" << endl;
 					
 			}
 			else if (returned_value == -2) {
@@ -241,8 +241,8 @@ void main()
 			cout << "\tEnter Amount You Want to WithDraw :";
 			cin >> Money_Trans.Amount;
 
-			cout << "\tEnter Your PIN : ";
-			cin >> Money_Trans.PIN;
+			cout << "\tEnter password : ";
+			cin >> Money_Trans.pincode;
 
 			returned_value = Money_Trans.WithdrawAmount();
 			if (returned_value == 0) {
