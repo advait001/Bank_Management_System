@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Account_Handling.cpp" />
     <ClCompile Include="Account_Modifications.cpp" />
     <ClCompile Include="Balance_Inquiry.cpp" />
     <ClCompile Include="bankdb.cpp" />
@@ -154,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\..\Downloads\DNAssist-master\DNAssist-master\sqlite3\sqlite3.h" />
+    <ClInclude Include="Account_Handling.h" />
     <ClInclude Include="Account_Modificatons.h" />
     <ClInclude Include="Balance_Inquiry.h" />
     <ClInclude Include="bankdb.h" />
