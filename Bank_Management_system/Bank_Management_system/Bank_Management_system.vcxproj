@@ -139,7 +139,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Account_Handling.cpp" />
     <ClCompile Include="Account_Modifications.cpp" />
     <ClCompile Include="Balance_Inquiry.cpp" />
     <ClCompile Include="bankdb.cpp" />
@@ -151,11 +150,11 @@
     <ClCompile Include="Form_Applications.cpp" />
     <ClCompile Include="Main_menu.cpp" />
     <ClCompile Include="Money_Transaction.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="Tax_Invoice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\..\Downloads\DNAssist-master\DNAssist-master\sqlite3\sqlite3.h" />
-    <ClInclude Include="Account_Handling.h" />
     <ClInclude Include="Account_Modificatons.h" />
     <ClInclude Include="Balance_Inquiry.h" />
     <ClInclude Include="bankdb.h" />
@@ -166,6 +165,7 @@
     <ClInclude Include="Form_Applications.h" />
     <ClInclude Include="Main_menu.h" />
     <ClInclude Include="Money_Transaction.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="sqlite3.h" />
     <ClInclude Include="sqlite3\sqlite3.h" />
     <ClInclude Include="Tax_Invoice.h" />

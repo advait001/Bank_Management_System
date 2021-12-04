@@ -26,6 +26,7 @@ Skill sets , logics and algorithms used in the system are :
 	8) Comments 
 	9) Stacks  
 	10) Queue
+	11) Dynamic Memory Allocation [malloc function]
 Additional use git hub is done to professionalize the work and make is easily accessible to all
 and also help the entire team to work on it simultaneously.
 */
@@ -45,7 +46,7 @@ and also help the entire team to work on it simultaneously.
 #include "Balance_Inquiry.h"
 #include "Tax_Invoice.h"
 #include "bankdb.h"
-#include "Account_Handling.h"
+#include "Node.h"
 
 using namespace std;
 
@@ -62,6 +63,7 @@ void main()
 	short returned_value;
 	short continue_code = 1;
 	short Call_func_return;
+	unsigned short input = 1;
 
 	//..Declarations
 	short returned_the_value = 0;
@@ -80,8 +82,7 @@ void main()
 	Main_menu Menu_;
 	Balance_Inquiry Balance_;
 	Tax_Invoice Tax;
-	Account_Handling Create;
-
+	Node Create;
 	//intialise database
 	InitDB();
 
@@ -525,6 +526,57 @@ void main()
 			Tax.Tax_Invoice_Slab();
 		}
 		//________________________________________________________Tax Invoice code ends____________________________________
+
+		//________________________________________________________Open new Account code Starts____________________________________
+		else if (continue_code == 5)
+		{
+		//..Head pointer Defined 
+			Node* Head;
+
+			//..Head Pointer intialized 
+			Head = NULL;
+
+			//..Menu Loop
+			while (input != 0)
+			{
+				//..Menu
+				//_________________________________________________
+				cout << "\n\t1: Create Account" << endl;
+				cout << "\t2: Print Latest Account Generated List" << endl;
+				cout << "\t3: Search Account" << endl;
+				cout << "\t0: Exit \n" << endl;;
+				cin >> input;
+				//_________________________________________________
+
+				if (input == 1)
+				{
+					Create.AskDetailsAndAdd();
+					ofstream write("Create_Account_Information.txt");
+					write << "Name: " << Create.Name << "\nAccount Number: " << Create.Num << "\nBalance: " << Create.balance << endl;
+				}
+				else if (input == 2)
+				{
+					Create.PrintNodes();
+					ifstream Read("Create_Account_Information.txt");
+					Read >> Create.Name >> Create.Num >> Create.balance;
+				}
+				else if (input == 3)
+				{
+					char num[15];
+					cout << "Enter Account number: ";
+					cin >> num;
+					Create.FindNode(num);
+				}
+				else if (input == 0)
+				{
+					break;
+				}
+				else
+					cout << "Invalid input" << endl;
+
+			}
+		}
+		//________________________________________________________Open new Account code Ends____________________________________
 		else
 		{
 			cout << "No function found on number : " << continue_code << endl;
