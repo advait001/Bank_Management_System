@@ -4,9 +4,12 @@
 
 using namespace std;
 
+
+//..Singly Linked lists used 
+//..Head Assigned
 Node* Head;
 
-//traverese to last node and return it
+//traverse to last node and return it
 Node* FindLastNode()
 {
 	if (Head == NULL)
