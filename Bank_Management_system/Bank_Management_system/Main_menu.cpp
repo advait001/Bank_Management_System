@@ -56,6 +56,7 @@ int Main_menu::Call_Function()
 		Main_return_value = Menu();
 		return Main_return_value;
 	}
+	return -1;
 }
 
 int Main_menu::Withdraw_money()
