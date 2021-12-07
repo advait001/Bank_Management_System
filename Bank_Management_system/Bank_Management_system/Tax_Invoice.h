@@ -9,7 +9,7 @@ public:
 	char aadharNumber[20];
 	char PanCardNO[20];
 	char Gender[1];
-	char AccountNumber[20];
+	unsigned long AccountNumber;
 	unsigned long AnnualIncome;
 	unsigned int TaxAmountPerMonth;
 	const char* TaxSlab[7] = { "Slab 1","Slab 2","Slab 3","Slab 4","Slab 5","Slab 6","Slab 7" };

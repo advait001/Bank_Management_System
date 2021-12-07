@@ -61,6 +61,6 @@ void Tax_Invoice::Tax_Invoice_Slab()
 		cout << "\t|Annual Income : " << AnnualIncome << endl;
 		cout << "\t|Tax Amount Per Year : " << TaxAmountPerMonth << endl;
 		cout << "\t|Tax Slab : " << TaxSlab[i + num] << endl;
-		cout << "------------------------------------------------------" << endl;
+		cout << "\t------------------------------------------------------" << endl;
 	}
 }
