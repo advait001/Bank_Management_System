@@ -56,3 +56,25 @@ void Balance_Inquiry::Account_List()
 	}
 	Line_func(0);
 }
+
+void Balance_Inquiry::Ask_Account_List()
+{
+	while (input != 0)
+	{
+	cout << "\tEnter 1 to see the Account numbers list or enter 0 to to continue: ";
+	cin >> input;
+		if (input == 1)
+		{
+			Account_List();
+			input = 0;
+		}
+		else if (input == 0)
+		{
+			return;
+		}
+		else
+		{
+			cout << "\tWrong input !!!";
+		}
+	}
+}

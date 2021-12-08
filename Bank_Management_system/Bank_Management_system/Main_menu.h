@@ -1,4 +1,5 @@
 #pragma once
+
 class Main_menu
 {
 	//..Definitions called 
@@ -16,6 +17,6 @@ public:
 	int Withdraw_money();
 	int Account_Modification_menu();
 	int Form_Application_menu();
-	void Line_func(unsigned short Upper_or_Lower);
+	static void Line_func(unsigned short Upper_or_Lower);
 };
 

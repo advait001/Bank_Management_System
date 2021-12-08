@@ -1,36 +1,32 @@
 /*This is a Bank Management System project
-It is used to Keep the records of clients,employee etc in Bank. ... 
-The system provides the access to the customer to 
-	1) create an account, 
-	2) deposit cash
-	3) withdraw the cash from his account, also to view reports of all accounts present.	
-The system is developed with the following functions added in it 
-	1) Modify any account . Income account to savings account/De-mat Account 
-	2) Application forms .
+It is used to Keep the records of clients, employee etc in Bank....
+The system provides the access to the customer to
+	1) Create an account,
+	2) Deposit cash
+	3) Withdraw the cash from their account, also to view reports of all accounts present.
+The system is developed with the following functions added in it
+	1) Modify any account. Income account to savings account/De-materialized Account
+	2) Application forms.
 		1. Apply for different services like:
 		2. Credit card
 		3. Debit Card
-		4. Cheque 
-		5. Loan Application 
+		4. Cheque
+		5. Loan Application
 		6. Tax Invoice receipt etc.
-It also supports generating new and discarding old accounts .
-Bank Balance Inquiry is also supported .
-Skill sets , logics and algorithms used in the system are :
-	1) Classes and Objects 
-	2) Inheritance of classes and member functions 
-	3) Pointers and Arrays 
-	4) File Operations and Data Handling 
-	5) Searching and Sorting 
+It also supports generating new and discarding old accounts.
+Bank Balance Inquiry is also supported.
+Skill sets, logics and algorithms used in the system are:
+	1) Classes and Objects
+	2) Inheritance of classes and member functions
+	3) Pointers and Arrays
+	4) File Operations and Data Handling
+	5) Searching and Sorting
 	6) Database (SQLite)
 	7) Linked Lists Single
-	8) Comments 
-	9) Stacks  
-	10) Queue
+	8) Comments
 	11) Dynamic Memory Allocation [malloc function]
-Additional use git hub is done to professionalize the work and make is easily accessible to all
-and also help the entire team to work on it simultaneously.
+Additional use Git-hub is done to professionalize the work and make is easily accessible to all and also helps the entire team to work on it simultaneously.
 */
-
 //..#defines and libraries that are used in this project
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
@@ -233,7 +229,6 @@ void main()
 				if (returned_value == 0)
 				{
 					cout << "\tTransaction successful" << endl;
-					screen.User_Detail_display();
 
 				}
 				else if (returned_value == -1)
@@ -244,11 +239,12 @@ void main()
 			}
 			//..Transfer Amount 
 			if (Call_func_return == 2) {
-				cout << "-----------------------------------------------------------------------------------------------------------------------------\n";
+				cout << "\t-----------------------------------------------------------------------------------------------------------------------------\n";
+				Balance_.Ask_Account_List();
 				cout << "\tAccount No From *: ";
 				cin >> Money_Trans.AccountNo1;
 
-				cout << "\tAccount No To *:";
+				cout << "\tAccount No To *: ";
 				cin >> Money_Trans.AccountNo2;
 
 				cout << "\tEnter Amount You want to Transfer : ";
@@ -278,6 +274,7 @@ void main()
 			//..Withdraw Amount 
 			if (Call_func_return == 3) {
 				cout << "----------------------------------------------------------------------------------------------------------------------------\n";
+				Balance_.Ask_Account_List();
 				cout << "\tEnter Your Account No : ";
 				cin >> Money_Trans.AccountNo1;
 
@@ -293,7 +290,7 @@ void main()
 
 				}
 				else if (returned_value == -1) {
-					cout << "\tDue To Insufficient Bank Balance Money Cannot Be Withdrawn";
+					cout << "\tDue To Insufficient Bank Balance Money Cannot Be Withdrawn\n";
 
 				}
 				else if (returned_value == -2) {

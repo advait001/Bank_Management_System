@@ -63,8 +63,8 @@ int Main_menu::Withdraw_money()
 {
 	//..transaction money member function object selection menu
 	Line_func(1);
-	cout << "\t1.Deposit Amount\n" << endl;
-	cout << "\t2.Transfer Amount\n" << endl;
+	cout << "\t1.Deposit Amount" << endl;
+	cout << "\t2.Transfer Amount" << endl;
 	cout << "\t3.Withdraw Amount" << endl;
 	Line_func(0);
 	cin >> Input;
