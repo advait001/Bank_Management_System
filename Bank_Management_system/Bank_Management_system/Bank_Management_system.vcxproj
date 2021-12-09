@@ -147,6 +147,7 @@
     <ClCompile Include="Bank_System.cpp" />
     <ClCompile Include="CppSQLite3.cpp" />
     <ClCompile Include="Display.cpp" />
+    <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Form_Applications.cpp" />
     <ClCompile Include="Main_menu.cpp" />
     <ClCompile Include="Money_Transaction.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Bank_System.h" />
     <ClInclude Include="CppSQLite3.h" />
     <ClInclude Include="Display.h" />
+    <ClInclude Include="Entity.h" />
     <ClInclude Include="Form_Applications.h" />
     <ClInclude Include="Main_menu.h" />
     <ClInclude Include="Money_Transaction.h" />

@@ -1,6 +1,7 @@
 #pragma once
+#include "Entity.h"
 
-class Main_menu
+class Main_menu : public Entity 
 {
 	//..Definitions called 
 public: 

@@ -43,6 +43,7 @@ Additional use Git-hub is done to professionalize the work and make is easily ac
 #include "Tax_Invoice.h"
 #include "bankdb.h"
 #include "Node.h"
+#include "Entity.h"
 
 using namespace std;
 
@@ -60,7 +61,7 @@ void main()
 	short continue_code = 1;
 	short Call_func_return;
 	unsigned short input = 1;
-
+	
 	//..Declarations
 	short returned_the_value = 0;
 
@@ -216,6 +217,7 @@ void main()
 			if (Call_func_return == 1) {
 				//..Deposit Amount
 				cout << "--------------------------------------------------------------------------------------------------------------------------------\n";
+				Balance_.Ask_Account_List();
 				cout << "\tEnter Your Account Number : ";
 				cin >> Money_Trans.AccountNo1;
 

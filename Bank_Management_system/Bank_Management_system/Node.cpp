@@ -32,6 +32,8 @@ void Node:: AddNode(Node* newNode)
 		Head = newNode;
 	else
 		LastNode->Next = newNode;
+	ofstream write("Create_Account_Information.txt");
+	write << newNode;
 }
 void Node :: FindNode(char num[15])
 {
