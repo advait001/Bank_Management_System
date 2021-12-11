@@ -13,7 +13,7 @@ int Money_Transaction::DepositAmount() {
 	Option = 1;
 	//.. Check if the pin is correct 
 	fstream _read;
-	_read.open("Test_Files//User_Login_Info.txt", ios::in);
+	_read.open(FILE_LOGIN_INFO, ios::in);
 	if (!_read)
 	{
 		cout << "No such file directiry found" << endl;
@@ -61,7 +61,7 @@ int Money_Transaction::TransferAmount() {
 
 	Option = 2;
 	fstream _read;
-	_read.open("Test_Files//User_Login_Info.txt", ios::in);
+	_read.open(FILE_LOGIN_INFO, ios::in);
 	if (!_read)
 	{
 		cout << "No such file directiry found" << endl;
@@ -133,7 +133,7 @@ int Money_Transaction::WithdrawAmount() {
 	Option = 3;
 	while (true){
 		fstream _read;
-		_read.open("Test_Files//User_Login_Info.txt", ios::in);
+		_read.open(FILE_LOGIN_INFO, ios::in);
 		if (!_read)
 		{
 			cout << "No such file directiry found" << endl;

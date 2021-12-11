@@ -1,6 +1,7 @@
 #include "../Header_Files/Node.h"
 #include <iostream>
 #include <fstream>
+#include "../Header_Files/Entity.h"
 
 using namespace std;
 
@@ -86,7 +87,7 @@ Node* Node :: AskDetailsAndAdd()
 void Node::ReadFromFile()
 {
 	fstream _read;
-	_read.open("Test_Files//Create_New_Acc_Info.txt", ios::in);
+	_read.open(FILE_ACCOUNT_INFO, ios::in);
 	if (!_read)
 	{
 		cout << "No such existing records found" << endl;

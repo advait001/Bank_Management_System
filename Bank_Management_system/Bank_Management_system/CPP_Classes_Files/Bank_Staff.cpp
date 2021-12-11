@@ -1,6 +1,7 @@
 #include "../Header_Files/Bank_Staff.h"
 #include <iostream>
 #include <fstream>
+#include "../Header_Files/Entity.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ int Bank_Staff::Bank_Signup_ID(char username [30],char password [30],char Re_Con
 		//..Confirmed password is Correct
 		//..wirte the username and password in the directory
 		fstream new_file;
-		new_file.open("Test_Files//Bank_Staff.txt", ios::out | ios::app);
+		new_file.open(FILE_BANK_STAFF, ios::out | ios::app);
 		if (!new_file)
 		{
 			cout << "New file creation failed";
@@ -40,7 +41,7 @@ int Bank_Staff::Login(char username[30], char password[30])
 {
 	//..read the username and password from the Bank_staff.txt file 
 	fstream _read;
-	_read.open("Test_Files//Bank_Staff.txt", ios::in);
+	_read.open(FILE_BANK_STAFF, ios::in);
 	if (!_read)
 	{
 		cout << "No such file directiry found" << endl;

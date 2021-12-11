@@ -1,6 +1,7 @@
 #include "../Header_Files/Account_Modificatons.h"
 #include<iostream>
 #include <fstream>
+#include "../Header_Files/Entity.h"
 
 using namespace std;
 
@@ -71,7 +72,7 @@ int Account_Modifications::ConversionAndFinalAmount(unsigned int returned_value)
 void Account_Modifications::AccountDetails() {
 
 	fstream new_file;
-	new_file.open("Test_Files//Account_Details.txt", ios::out | ios::app);
+	new_file.open(FILE_ACCOUNT_DETAILS, ios::out | ios::app);
 	if (!new_file)
 	{
 		cout << "New file creation failed";
@@ -84,11 +85,11 @@ void Account_Modifications::AccountDetails() {
 }
 void Account_Modifications::UserDetails() {
 //..For Noting Down the Details the User Enter
-	fstream write("UserAccountDetails.txt");
+	fstream write(FILE_ACCOUNT_DETAILS);
 	write << Name << "\n" << Address << "\n" << PhoneNo << "\n" << day << "\t" << month << "\t" << year << "\n" << AadharNo << "\n" << EmailId << endl;
 
 	fstream new_file;
-	new_file.open("Test_Files//User_Account_Details.txt", ios::out | ios::app);
+	new_file.open(FILE_ACCOUNT_DETAILS, ios::out | ios::app);
 	if (!new_file)
 	{
 		cout << "New file creation failed";
