@@ -71,7 +71,7 @@ int Account_Modifications::ConversionAndFinalAmount(unsigned int returned_value)
 void Account_Modifications::AccountDetails() {
 
 	fstream new_file;
-	new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Account_Details.txt", ios::out | ios::app);
+	new_file.open("Test_Files//Account_Details.txt", ios::out | ios::app);
 	if (!new_file)
 	{
 		cout << "New file creation failed";
@@ -88,7 +88,7 @@ void Account_Modifications::UserDetails() {
 	write << Name << "\n" << Address << "\n" << PhoneNo << "\n" << day << "\t" << month << "\t" << year << "\n" << AadharNo << "\n" << EmailId << endl;
 
 	fstream new_file;
-	new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\User_Account_Details.txt", ios::out | ios::app);
+	new_file.open("Test_Files//User_Account_Details.txt", ios::out | ios::app);
 	if (!new_file)
 	{
 		cout << "New file creation failed";

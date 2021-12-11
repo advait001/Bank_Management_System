@@ -131,7 +131,7 @@ void Form_Applications::ReasonForTakingLoan() {
 	//..Using File Operation for writing down the details related to loan
 
 	fstream new_file;
-	new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Loan_Details.txt", ios::out | ios::app);
+	new_file.open("Test_Files//Loan_Details.txt", ios::out | ios::app);
 	if (!new_file)
 	{
 		cout << "New file creation failed";

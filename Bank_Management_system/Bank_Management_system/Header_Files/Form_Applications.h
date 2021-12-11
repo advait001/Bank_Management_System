@@ -4,7 +4,7 @@ class Form_Applications
 {
 public:
 	char name[20];
-	char PhnNo;
+	char PhnNo[30];
 	unsigned short Age;
 	char AccNumber;
 	char aadharNumber;

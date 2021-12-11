@@ -28,6 +28,8 @@ Skill sets, logics and algorithms used in the system are:
 Additional use Git-hub is done to professionalize the work and make is easily accessible to all and also helps the entire team to work on it simultaneously.
 */
 //..#defines and libraries that are used in this project
+
+
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <fstream>
@@ -48,7 +50,6 @@ Additional use Git-hub is done to professionalize the work and make is easily ac
 
 using namespace std;
 
-
 //..Main Function
 void main()
 {
@@ -68,7 +69,6 @@ void main()
 
 	//..For Personal details in form application
 	unsigned int Return_Total_Time;
-  
   
 	//..Make Systems of the class
 	Bank_System System;
@@ -108,7 +108,7 @@ void main()
 
 		//..write the personal details in the "Personal_Details.txt" file 
 		fstream new_file;
-		new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Personal_Details.txt", ios::out | ios::app);
+		new_file.open("Test_Files//Personal_Details.txt", ios::out | ios::app);
 		if (!new_file)
 		{
 			cout << "New file creation failed";
@@ -188,7 +188,7 @@ void main()
 			cin >> Staff.age;
 
 			fstream new_file;
-			new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Staff_Personal_Details.txt", ios::out | ios::app);
+			new_file.open("Test_Files//Staff_Personal_Details.txt", ios::out | ios::app);
 			if (!new_file)
 			{
 				cout << "New file creation failed";
@@ -570,7 +570,7 @@ void main()
 				{
 					Create.AskDetailsAndAdd();
 					fstream new_file;
-					new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Create_New_Acc_Info.txt", ios::out | ios::app);
+					new_file.open("Test_Files//Create_New_Acc_Info.txt", ios::out | ios::app);
 					if (!new_file)
 					{
 						cout << "New file creation failed";
@@ -584,7 +584,7 @@ void main()
 				else if (input == 2)
 				{
 					fstream _read;
-					_read.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Create_New_Acc_Info.txt", ios::in);
+					_read.open("Test_Files//Create_New_Acc_Info.txt", ios::in);
 					if (!_read)
 					{
 						cout << "No such file directiry found" << endl;
