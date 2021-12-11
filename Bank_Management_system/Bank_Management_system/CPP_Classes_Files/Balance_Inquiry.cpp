@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include "Balance_Inquiry.h"
-#include "Main_menu.h"
+#include "../Header_Files/Balance_Inquiry.h"
+#include "../Header_Files/Main_menu.h"
 
 using namespace std;
 

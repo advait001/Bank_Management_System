@@ -1,8 +1,11 @@
-#include "Main_menu.h"
+#include "../Header_Files/Main_menu.h"
+#include "../Header_Files/Entity.h"
 #include <iostream>
 #include <fstream>
 
 using namespace std;
+
+Entity Object;
 
 void Main_menu::Line_func(unsigned short Upper_or_Lower)
 {
@@ -22,14 +25,14 @@ int Main_menu::Menu()
 	//..code pending
 	//..Main menu print
 	cout << "\n\t.________________________________________________." << endl;
-	cout << "\t|                   Main Menu" << endl;
-	cout << "\t|\t1.Transactions and Transfer Money" << endl;
-	cout << "\t|\t2.Modification of accounts" << endl;
-	cout << "\t|\t3.Application Forms" << endl;
-	cout << "\t|\t4.Close Account" << endl;
-	cout << "\t|\t5.Open New Account" << endl;
-	cout << "\t|\t7.Balance Inquiry" << endl;
-	cout << "\t|\t8.Tax Invoice" << endl;
+	cout << "\t|                   Main Menu"; Tabs(3);
+	cout << "\t|\t1.Transactions and Transfer Money"; Tabs(1);
+	cout << "\t|\t2.Modification of accounts"; Tabs(2);
+	cout << "\t|\t3.Application Forms";Tabs(3);
+	cout << "\t|\t4.Close Account"; Tabs(4);
+	cout << "\t|\t5.Open New Account"; Tabs(3);
+	cout << "\t|\t7.Balance Inquiry"; Tabs(3);
+	cout << "\t|\t8.Tax Invoice"; Tabs(4);
 	cout << "\t|________________________________________________.\n" << endl;
 
 	//..Main menu value is returned in Main_menu_select

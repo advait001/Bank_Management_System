@@ -1,4 +1,4 @@
-#include "Bank_System.h"
+#include "../Header_Files/Bank_System.h"
 #include <iostream>
 #include <fstream>
 
@@ -40,9 +40,18 @@ int Bank_System::Signup()
 	}
 
 	//..Write text in Text_Code.txt file 
-	ofstream write("Text_Code.txt");
-	write << User_name << "\n" << Password;
-	
+	fstream new_file;
+	new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\User_Login_Info.txt", ios::out | ios::app);
+	if (!new_file)
+	{
+		cout << "New file creation failed";
+	}
+	else
+	{
+		new_file << User_name << "\n" << Password << endl;
+		new_file.close();
+	}
+
 	return 0;
 }
 
@@ -50,31 +59,42 @@ int Bank_System::Login(char username[30], char password[30])
 {
 	//..Login Logic Memeber function
 	//..Read Username and Password from the Text_Code.txt file
-	ifstream in("Text_Code.txt");
-	char Read[30];
-	char PWD[30];
-	in >> Read;
-	in >> PWD;
-
-	//..Compare the username and password 
-	if (strcmp(Read, username) == 0)
+	fstream _read;
+	_read.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\User_Login_Info.txt", ios::in);
+	if (!_read)
 	{
-		//..If username matches 
-		if (strcmp(PWD, password) == 0){
-			//..if password matches 
-			cout << "\n\tuser loged in Successfully" << endl;
-		}
-		else{
-			//..Wrong Password
-			cout << "\n\tWrong Password" << endl;
-		exit(0);
-		}
+		cout << "No such file directiry found" << endl;
 	}
 	else
 	{
-		//..Wrong Username No user found 
-		cout << "\n\tUser not found" << endl;
-		exit(0);
+		char user_name[30];
+		char Pass_word[30];
+
+		_read >> user_name;
+		_read >> Pass_word;
+
+		_read.close();
+
+		//..Compare the username and password 
+		if (strcmp(user_name, username) == 0)
+		{
+			//..If username matches 
+			if (strcmp(Pass_word, password) == 0) {
+				//..if password matches 
+				cout << "\n\tuser loged in Successfully" << endl;
+			}
+			else {
+				//..Wrong Password
+				cout << "\n\tWrong Password" << endl;
+				exit(0);
+			}
+		}
+		else
+		{
+			//..Wrong Username No user found 
+			cout << "\n\tUser not found" << endl;
+			exit(0);
+		}
 	}
 	return 0;
 }
