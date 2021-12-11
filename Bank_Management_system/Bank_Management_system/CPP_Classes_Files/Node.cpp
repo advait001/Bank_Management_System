@@ -1,4 +1,4 @@
-#include "Node.h"
+#include "../Header_Files/Node.h"
 #include <iostream>
 #include <fstream>
 
@@ -7,6 +7,7 @@ using namespace std;
 
 //..Singly Linked lists used 
 //..Head Assigned
+
 Node* Head;
 
 //traverse to last node and return it
@@ -30,10 +31,22 @@ void Node:: AddNode(Node* newNode)
 
 	if (LastNode == NULL)
 		Head = newNode;
-	else
-		LastNode->Next = newNode;
-	ofstream write("Create_Account_Information.txt");
-	write << newNode;
+	else 
+	{
+		fstream new_file;
+		new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Create_New_Account.txt", ios::out | ios::app);
+		if (!new_file)
+		{
+			cout << "New file creation failed";
+		}
+		else
+		{
+			new_file << newNode->Name << endl;
+			new_file << newNode->Num << endl;
+			new_file << newNode->balance << endl;
+			new_file.close();
+		}
+	}
 }
 void Node :: FindNode(char num[15])
 {

@@ -1,4 +1,4 @@
-#include "Account_Modificatons.h"
+#include "../Header_Files/Account_Modificatons.h"
 #include<iostream>
 #include <fstream>
 
@@ -69,16 +69,35 @@ int Account_Modifications::ConversionAndFinalAmount(unsigned int returned_value)
 	return 0;
 }
 void Account_Modifications::AccountDetails() {
-//..For Noting Down the Details the User Enter
-	ofstream write("Account_Modification_Details.txt");
-	write << AccountNo << "\n" << CustomerName << "\n" << BranchName << endl;
-	
+
+	fstream new_file;
+	new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Account_Details.txt", ios::out | ios::app);
+	if (!new_file)
+	{
+		cout << "New file creation failed";
+	}
+	else
+	{
+		new_file << AccountNo << "\n" << CustomerName << "\n" << BranchName << endl;
+		new_file.close();
+	}
 }
 void Account_Modifications::UserDetails() {
 //..For Noting Down the Details the User Enter
-	ofstream write("UserAccountDetails.txt");
+	fstream write("UserAccountDetails.txt");
 	write << Name << "\n" << Address << "\n" << PhoneNo << "\n" << day << "\t" << month << "\t" << year << "\n" << AadharNo << "\n" << EmailId << endl;
 
+	fstream new_file;
+	new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\User_Account_Details.txt", ios::out | ios::app);
+	if (!new_file)
+	{
+		cout << "New file creation failed";
+	}
+	else
+	{
+		new_file << Name << "\n" << Address << "\n" << PhoneNo << "\n" << day << "\n" << month << "\n" << year << "\n" << AadharNo << "\n" << EmailId << endl;
+		new_file.close();
+	}
 }
 
 int Account_Modifications::Savings_Account_returns(unsigned int simple_interest, unsigned int SavingsAccountBalance)

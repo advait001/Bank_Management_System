@@ -1,6 +1,0 @@
-Name : GauravKuchekar
-Phone Number : 123
-Account Number : 456
-Salary SLip No : 789
-AaDhar Number : 987
-Pan Card Number : 654

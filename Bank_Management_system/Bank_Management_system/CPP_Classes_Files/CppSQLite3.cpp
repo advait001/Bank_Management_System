@@ -26,7 +26,7 @@
 //						-Added CppSQLiteDB3::tableExists()
 ////////////////////////////////////////////////////////////////////////////////
 #include "windows.h"
-#include "CppSQLite3.h"
+#include "../Header_Files/CppSQLite3.h"
 #include <cstdlib>
 
 

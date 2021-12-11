@@ -1,5 +1,5 @@
-#include "Main_menu.h"
-#include "Entity.h"
+#include "../Header_Files/Main_menu.h"
+#include "../Header_Files/Entity.h"
 #include <iostream>
 #include <fstream>
 

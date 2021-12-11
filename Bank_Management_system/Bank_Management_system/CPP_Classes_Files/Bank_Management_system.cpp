@@ -32,18 +32,19 @@ Additional use Git-hub is done to professionalize the work and make is easily ac
 #include <iostream>
 #include <fstream>
 #include <string.h>
-#include "Bank_System.h"
-#include "Bank_Staff.h"
-#include "Display.h"
-#include "Account_Modificatons.h"
-#include "Form_Applications.h"
-#include "Money_Transaction.h"
-#include "Main_menu.h"
-#include "Balance_Inquiry.h"
-#include "Tax_Invoice.h"
-#include "bankdb.h"
-#include "Node.h"
-#include "Entity.h"
+#include "../Header_Files/Bank_System.h"
+#include "../Header_Files/Bank_Staff.h"
+#include "../Header_Files/Display.h"
+#include "../Header_Files/Account_Modificatons.h"
+#include "../Header_Files/Form_Applications.h"
+#include "../Header_Files/Money_Transaction.h"
+#include "../Header_Files/Main_menu.h"
+#include "../Header_Files/Balance_Inquiry.h"
+#include "../Header_Files/Tax_Invoice.h"
+#include "../Header_Files/bankdb.h"
+#include "../Header_Files/Node.h"
+#include "../Header_Files/Entity.h"
+#include <direct.h>
 
 using namespace std;
 
@@ -67,8 +68,8 @@ void main()
 
 	//..For Personal details in form application
 	unsigned int Return_Total_Time;
-
-
+  
+  
 	//..Make Systems of the class
 	Bank_System System;
 	Bank_Staff Staff;
@@ -106,8 +107,17 @@ void main()
 		cin >> System.age;
 
 		//..write the personal details in the "Personal_Details.txt" file 
-		ofstream write("Personal_Details.txt");
-		write << System.name << "\n" << System.Phone_Number << "\n" << System.Email << "\n" << System.age << endl;
+		fstream new_file;
+		new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Personal_Details.txt", ios::out | ios::app);
+		if (!new_file)
+		{
+			cout << "New file creation failed";
+		}
+		else
+		{
+			new_file << System.name << "\n" << System.Phone_Number << "\n" << System.Email << "\n" << System.age << endl;
+			new_file.close();
+		}
 
 		System.Signup();
 	}
@@ -177,8 +187,17 @@ void main()
 			cout << "\tAge: ";
 			cin >> Staff.age;
 
-			ofstream write("Staff_Personal_Details.txt");
-			write << Staff.name << "\n" << Staff.Phone_Number << "\n" << Staff_ID << "\n" << Staff.age << endl;
+			fstream new_file;
+			new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Staff_Personal_Details.txt", ios::out | ios::app);
+			if (!new_file)
+			{
+				cout << "New file creation failed";
+			}
+			else
+			{
+				new_file << Staff.name << "\n" << Staff.Phone_Number << "\n" << Staff_ID << "\n" << Staff.age << endl;
+				new_file.close();
+			}
 
 			cout << "\tUser-name: ";
 			cin >> Username_;
@@ -550,14 +569,38 @@ void main()
 				if (input == 1)
 				{
 					Create.AskDetailsAndAdd();
-					ofstream write("Create_Account_Information.txt");
-					write << "Name: " << Create.Name << "\nAccount Number: " << Create.Num << "\nBalance: " << Create.balance << endl;
+					fstream new_file;
+					new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Create_New_Acc_Info.txt", ios::out | ios::app);
+					if (!new_file)
+					{
+						cout << "New file creation failed";
+					}
+					else
+					{
+						new_file << "Name: " << Create.Name << "\nAccount Number: " << Create.Num << "\nBalance: " << Create.balance << endl;
+						new_file.close();
+					}
 				}
 				else if (input == 2)
 				{
-					Create.PrintNodes();
-					ifstream Read("Create_Account_Information.txt");
-					Read >> Create.Name >> Create.Num >> Create.balance;
+					fstream _read;
+					_read.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Create_New_Acc_Info.txt", ios::in);
+					if (!_read)
+					{
+						cout << "No such file directiry found" << endl;
+					}
+					else
+					{
+						char name[30];
+						char num[15];
+						unsigned int balance;
+
+						_read >> name;
+						_read >> num;
+						_read >> balance;
+
+						_read.close();
+					}
 				}
 				else if (input == 3)
 				{
