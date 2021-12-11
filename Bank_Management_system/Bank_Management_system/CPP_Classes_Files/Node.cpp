@@ -8,7 +8,7 @@ using namespace std;
 //..Singly Linked lists used 
 //..Head Assigned
 
-Node* Head;
+Node* Head = NULL;
 
 //traverse to last node and return it
 Node* FindLastNode()
@@ -32,38 +32,22 @@ void Node:: AddNode(Node* newNode)
 	if (LastNode == NULL)
 		Head = newNode;
 	else 
-	{
-		fstream new_file;
-		new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\Create_New_Account.txt", ios::out | ios::app);
-		if (!new_file)
-		{
-			cout << "New file creation failed";
-		}
-		else
-		{
-			new_file << newNode->Name << endl;
-			new_file << newNode->Num << endl;
-			new_file << newNode->balance << endl;
-			new_file.close();
-		}
-	}
+		LastNode->Next = newNode;
 }
-void Node :: FindNode(char num[15])
+
+Node* Node :: FindNode(char num[15])
 {
 	Node* tempNode = Head;
 
 	while (tempNode != NULL)
 	{
 		if (strcmp(tempNode->Num, num) == 0)
-		{
-			cout << "Name " << tempNode->Name << " Num: " << tempNode->Num << " Balance: " << tempNode->balance << endl;
-			break;
-		}
+			return tempNode;
+		//take next node
 		tempNode = tempNode->Next;
 	}
 	//if we reach till end
-	if (tempNode == NULL)
-		cout << "No account found";
+	return NULL;
 }
 //print all values
 void Node :: PrintNodes()
@@ -82,7 +66,7 @@ void Node :: PrintNodes()
 		tempNode = tempNode->Next;
 	}
 }
-void Node :: AskDetailsAndAdd()
+Node* Node :: AskDetailsAndAdd()
 {
 	Node* newNode = (Node*)malloc(sizeof(Node));
 	//ask details to user
@@ -96,4 +80,46 @@ void Node :: AskDetailsAndAdd()
 	newNode->Next = NULL;
 	//add node in the linklist
 	AddNode(newNode);
+
+	return newNode;
+}
+void Node::ReadFromFile()
+{
+	fstream _read;
+	_read.open("Test_Files//Create_New_Acc_Info.txt", ios::in);
+	if (!_read)
+	{
+		cout << "No such existing records found" << endl;
+	}
+	else
+	{
+		char name[30];
+		char num[15];
+		char bal[10];
+
+		while (!_read.eof())
+		{
+			//read one record (3 lines each)
+			_read.getline(name, 30);
+			_read.getline(num, 15);
+			_read.getline(bal, 10);
+
+			//if no name means file reading over
+			if (strcmp(name, "") == 0)
+				break;
+			//copy(6, 100 - 6, name);
+
+			//create note and append it
+			Node* newNode = (Node*)malloc(sizeof(Node));
+			strcpy_s(newNode->Name, name);
+			strcpy_s(newNode->Num, num);
+			newNode->balance = atoi( bal);
+			newNode->Next = NULL;
+			//add node in the linklist
+			AddNode(newNode);
+
+		}
+		_read.close();
+	}
+
 }

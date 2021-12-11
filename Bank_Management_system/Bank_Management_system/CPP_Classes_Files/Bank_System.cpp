@@ -41,7 +41,7 @@ int Bank_System::Signup()
 
 	//..Write text in Text_Code.txt file 
 	fstream new_file;
-	new_file.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\User_Login_Info.txt", ios::out | ios::app);
+	new_file.open("Test_Files//User_Login_Info.txt", ios::out | ios::app);
 	if (!new_file)
 	{
 		cout << "New file creation failed";
@@ -60,7 +60,7 @@ int Bank_System::Login(char username[30], char password[30])
 	//..Login Logic Memeber function
 	//..Read Username and Password from the Text_Code.txt file
 	fstream _read;
-	_read.open("C:\\Users\\advai\\OneDrive\\Documents\\GitHub\\Bank_Management_System\\Bank_Management_system\\Bank_Management_system\\Test_Files\\User_Login_Info.txt", ios::in);
+	_read.open("Test_Files//User_Login_Info.txt", ios::in);
 	if (!_read)
 	{
 		cout << "No such file directiry found" << endl;

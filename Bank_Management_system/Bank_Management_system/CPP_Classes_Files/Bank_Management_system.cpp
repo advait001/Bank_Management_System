@@ -50,6 +50,7 @@ Additional use Git-hub is done to professionalize the work and make is easily ac
 
 using namespace std;
 
+
 //..Main Function
 void main()
 {
@@ -83,7 +84,8 @@ void main()
 	Node Create;
 	//intialise database
 	InitDB();
-
+	//read existing records from file
+	Create.ReadFromFile();
 	//..Greet function called 
 	System.Greet();
 
@@ -549,10 +551,10 @@ void main()
 		else if (continue_code == 5)
 		{
 		//..Head pointer Defined 
-			Node* Head;
+			//Node* Head;
 
 			//..Head Pointer intialized 
-			Head = NULL;
+			//Head = NULL;
 
 			//..Menu Loop
 			while (input != 0)
@@ -568,7 +570,7 @@ void main()
 
 				if (input == 1)
 				{
-					Create.AskDetailsAndAdd();
+					Node* tempNode = Create.AskDetailsAndAdd();
 					fstream new_file;
 					new_file.open("Test_Files//Create_New_Acc_Info.txt", ios::out | ios::app);
 					if (!new_file)
@@ -577,7 +579,7 @@ void main()
 					}
 					else
 					{
-						new_file << "Name: " << Create.Name << "\nAccount Number: " << Create.Num << "\nBalance: " << Create.balance << endl;
+						new_file << tempNode->Name << endl << tempNode->Num << endl << tempNode->balance << endl;
 						new_file.close();
 					}
 				}
@@ -607,7 +609,11 @@ void main()
 					char num[15];
 					cout << "Enter Account number: ";
 					cin >> num;
-					Create.FindNode(num);
+					Node* tempNode = Create.FindNode(num);
+					if (tempNode == NULL)
+						cout << "No account found";
+					else
+						cout << "Name " << tempNode->Name << " Num: " << tempNode->Num << " Balance: " << tempNode->balance << endl;
 				}
 				else if (input == 0)
 				{

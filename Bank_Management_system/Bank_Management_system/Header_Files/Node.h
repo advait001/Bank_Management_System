@@ -14,8 +14,9 @@ public:
 	//..Memeber function Defined 
 
 	void AddNode(Node* newNode); //..Add nodes to the end
-	void FindNode(char num[15]); //..Searches According to the given Input
+	Node* FindNode(char num[15]); //..Searches According to the given Input
 	void PrintNodes(); //..Prints the list of Accounts Added 
-	void AskDetailsAndAdd(); //..Take the user details input 
+	Node* AskDetailsAndAdd(); //..Take the user details input 
+	void ReadFromFile(); //This will read file and append nodes
 };
 
