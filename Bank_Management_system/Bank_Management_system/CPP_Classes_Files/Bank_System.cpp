@@ -1,15 +1,20 @@
 #include "../Header_Files/Bank_System.h"
+#include "../Header_Files/Entity.h"
 #include <iostream>
 #include <fstream>
 
 using namespace std;
 
+//Entity Object;
+
 void Bank_System :: Greet()
 {
 	//..Welcome text
 	//..Basic function to represent the welcome text at the start
-	cout << "\n\n\t\t\t\t   Welcome to Bank Management System	  " << endl;
-	cout << "\t\t\t\t._____________________________________." << endl;
+	//Object.Tabs(4); 
+	cout << "\n\n\t\t\t\t._______________________________________." << endl;
+	cout << "\t\t\t\t|   Welcome to Bank Management System   |" << endl;
+	cout << "\t\t\t\t._______________________________________." << endl;
 }
 
 int Bank_System::Signup()

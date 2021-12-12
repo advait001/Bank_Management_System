@@ -82,6 +82,7 @@ void main()
 	Balance_Inquiry Balance_;
 	Tax_Invoice Tax;
 	Node Create;
+	Entity Present;
 	//intialise database
 	InitDB();
 	//read existing records from file
@@ -92,7 +93,10 @@ void main()
 	//________________________________________..Login and sign-up code..________________________________________
 	//..Working for a single persons use currently..
 
-	cout << "\n\t1) Login (existing user) \n\t2) Sign-up (new user)\n\t3) Bank Management Login (bank Staff)\n\t4) Enter 0 to Exit\n" << endl;
+	cout << "\n\t0) Enter 0 to Exit" << endl;
+	cout << "\t1) Login(existing user)" << endl;
+	cout << "\t2) Sign - up(new user)" << endl;
+	cout << "\t3) Bank Management Login(bank Staff) " << endl;
 	cout << "\t"; cin >> number;
 
 	//..Personal details of the user 

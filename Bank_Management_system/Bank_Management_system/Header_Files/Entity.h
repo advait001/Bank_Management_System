@@ -12,3 +12,4 @@ static const char* FILE_LOGIN_INFO = "Test_Files//User_Login_Info.txt";
 static const char* FILE_USER_INFO = "Test_Files//User_Account_Info.txt";
 static const char* FILE_LOAN_DETAILS = "Test_Files//Loan_Details.txt";
 static const char* FILE_LOAN_INFO = "Test_Files//Loan_Related_Details.txt";
+static const char* FILE_PROJECT_DESCRIPTION = "Test_Files//Description.txt";

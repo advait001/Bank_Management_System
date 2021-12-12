@@ -1,0 +1,28 @@
+This is a Bank Management System project Made by Shanatanu , Advait , Ninad and Gaurav 
+It is used to Keep the records of clients, employee etc in Bank....
+The system provides the access to the customer to
+	1) Create an account,
+	2) Deposit cash
+	3) Withdraw the cash from their account, also to view reports of all accounts present.
+The system is developed with the following functions added in it
+	1) Modify any account. Income account to savings account/De-materialized Account
+	2) Application forms.
+		1. Apply for different services like:
+		2. Credit card
+		3. Debit Card
+		4. Cheque
+		5. Loan Application
+		6. Tax Invoice receipt etc.
+It also supports generating new and discarding old accounts.
+Bank Balance Inquiry is also supported.
+Skill sets, logics and algorithms used in the system are:
+	1) Classes and Objects
+	2) Inheritance of classes and member functions
+	3) Pointers and Arrays
+	4) File Operations and Data Handling
+	5) Searching and Sorting
+	6) Database (SQLite)
+	7) Linked Lists Single
+	8) Comments
+	11) Dynamic Memory Allocation [malloc function]
+Additional use Git-hub is done to professionalize the work and make is easily accessible to all and also helps the entire team to work on it simultaneously. 
