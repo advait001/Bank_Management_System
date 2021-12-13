@@ -7,6 +7,3 @@ advait
 shlok
 3000
 44444
-jack
-343
-54
