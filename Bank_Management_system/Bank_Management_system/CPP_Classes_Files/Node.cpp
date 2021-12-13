@@ -26,17 +26,40 @@ Node* FindLastNode()
 }
 
 //Add new node to last in the linklist
-void Node:: AddNode(Node* newNode)
+void Node::AddNode(Node* newNode)
 {
 	Node* LastNode = FindLastNode();
 
 	if (LastNode == NULL)
 		Head = newNode;
-	else 
+	else
 		LastNode->Next = newNode;
 }
 
-Node* Node :: FindNode(char num[15])
+bool Node::DeleteNode(char num[15])
+{
+	Node* tempNode = Head;
+
+	if (tempNode != NULL && strcmp(tempNode->Num, num) == 0)
+	{
+		Head = tempNode->Next;
+		return true;
+	}
+	while (tempNode != NULL)
+	{
+		if (strcmp(tempNode->Next->Num, num) == 0)
+		{
+			tempNode->Next = tempNode->Next->Next;
+			return true;
+		}
+
+		//take next node
+		tempNode = tempNode->Next;
+	}
+	//if we reach till end
+	return false;
+}
+Node* Node::FindNode(char num[15])
 {
 	Node* tempNode = Head;
 
@@ -51,7 +74,7 @@ Node* Node :: FindNode(char num[15])
 	return NULL;
 }
 //print all values
-void Node :: PrintNodes()
+void Node::PrintNodes()
 {
 	if (Head == NULL)
 	{
@@ -67,7 +90,7 @@ void Node :: PrintNodes()
 		tempNode = tempNode->Next;
 	}
 }
-Node* Node :: AskDetailsAndAdd()
+Node* Node::AskDetailsAndAdd()
 {
 	Node* newNode = (Node*)malloc(sizeof(Node));
 	//ask details to user
@@ -114,7 +137,7 @@ void Node::ReadFromFile()
 			Node* newNode = (Node*)malloc(sizeof(Node));
 			strcpy_s(newNode->Name, name);
 			strcpy_s(newNode->Num, num);
-			newNode->balance = atoi( bal);
+			newNode->balance = atoi(bal);
 			newNode->Next = NULL;
 			//add node in the linklist
 			AddNode(newNode);
@@ -123,4 +146,29 @@ void Node::ReadFromFile()
 		_read.close();
 	}
 
+}
+
+void Node::WriteAccountsToFile()
+{
+	Node* tempNode = Head;
+
+	fstream new_file;
+	new_file.open(FILE_ACCOUNT_INFO, ios::out);
+
+	if (!new_file)
+	{
+		cout << "New file creation failed";
+	}
+	else
+	{
+		while (tempNode != NULL)
+		{
+			new_file << tempNode->Name << endl << tempNode->Num << endl << tempNode->balance << endl;
+
+			//take next node
+			tempNode = tempNode->Next;
+		}
+
+		new_file.close();
+	}
 }

@@ -64,13 +64,13 @@ void main()
 	short continue_code = 1;
 	short Call_func_return;
 	unsigned short input = 1;
-	
+	unsigned short ReDirect = 1;
 	//..Declarations
 	short returned_the_value = 0;
 
 	//..For Personal details in form application
 	unsigned int Return_Total_Time;
-  
+
 	//..Make Systems of the class
 	Bank_System System;
 	Bank_Staff Staff;
@@ -83,6 +83,8 @@ void main()
 	Tax_Invoice Tax;
 	Node Create;
 	Entity Present;
+	Entity Entities;
+
 	//intialise database
 	InitDB();
 	//read existing records from file
@@ -92,142 +94,177 @@ void main()
 
 	//________________________________________..Login and sign-up code..________________________________________
 	//..Working for a single persons use currently..
-
-	cout << "\n\t0) Enter 0 to Exit" << endl;
-	cout << "\t1) Login(existing user)" << endl;
-	cout << "\t2) Sign - up(new user)" << endl;
-	cout << "\t3) Bank Management Login(bank Staff) " << endl;
-	cout << "\t"; cin >> number;
-
-	//..Personal details of the user 
-	if (number == 2) {
-
-		cout << "\n\tEnter the following details to sign-up as a new user in our bank." << endl;
-		cout << "\n\tFirst Name: ";
-		cin >> System.name;
-		cout << "\tPhone number: ";
-		cin >> System.Phone_Number;
-		cout << "\tEmail-ID: ";
-		cin >> System.Email;
-		cout << "\tAge: ";
-		cin >> System.age;
-
-		//..write the personal details in the "Personal_Details.txt" file 
-		fstream new_file;
-		new_file.open(FILE_PERSONAL_DETAILS, ios::out | ios::app);
-		if (!new_file)
-		{
-			cout << "New file creation failed";
-		}
-		else
-		{
-			new_file << System.name << "\n" << System.Phone_Number << "\n" << System.Email << "\n" << System.age << endl;
-			new_file.close();
-		}
-
-		System.Signup();
-	}
-	else if (number == 0)
+	while (ReDirect != 0) 
 	{
-		exit(0);
-	}
-	//..Login code..
-	//..Take the user-name and password from the user and enter into the Login member function
-	else if (number == 1) {
-		cout << "\n\tUser-name: ";
-		cin >> username;
-		cout << "\tPassword: ";
-		cin >> password;
-		System.Login(username, password);
-	}
-	else if (number == 3)
-	{
-		//..sign up code 
-		cout << "\n\t1) Login \n\t2) Sign-up\n";
-		unsigned short num;
-		cout << "\t";
-		cin >> num;
+		Entities.Lines(1);
+		cout << "\n\t0) Enter 0 to Exit" << endl;
+		cout << "\t1) Login(existing user)" << endl;
+		cout << "\t2) Sign - up(new user)" << endl;
+		cout << "\t3) Bank Management Login(bank Staff) " << endl;
+		cout << "\t4) Project Details" << endl;
+		Entities.Lines(1);
+		cout << "\n\t"; cin >> number;
+		Entities.Lines(1);
 
-		//..login or sign up 
-		if (num == 1)
-		{
-			cout << "\n\tUser-name: ";
-			cin >> username;
-			cout << "\tPassword: ";
-			cin >> password;
+		//..Personal details of the user 
+		if (number == 2) {
 
-			//..check whether the password and the reconfirmed password match with each other 
-			returned_the_value = Staff.Login(username, password);
-			if (returned_the_value == 0)
-			{
-				//..username and password matched successfully
-				cout << "\n\tuser log in Successful" << endl;
-				screen.User_Detail_display();
-			}
-			else if (returned_the_value == -1)
-			{
-				//..username matched but password is wrong 
-				cout << "\n\tWrong Password" << endl;
-				exit(0);
-			}
-			else if (returned_the_value == -2)
-			{
-				//..user not found , wrong user-name 
-				cout << "\n\tUser not found" << endl;
-				exit(0);
-			}
-		}
-		//..Signup code for staff member 
-		else if (num == 2)
-		{
-			char Username_[30];
-			char Pass_word[30];
-
-			cout << "\n\tEnter the following details to sign-up as a new staff member in our bank." << endl;
+			Entities.Lines(1);
+			cout << "\n\tEnter the following details to sign-up as a new user in our bank." << endl;
 			cout << "\n\tFirst Name: ";
-			cin >> Staff.name;
+			cin >> System.name;
 			cout << "\tPhone number: ";
-			cin >> Staff.Phone_Number;
-			cout << "\tStaff-ID: ";
-			cin >> Staff_ID;
+			cin >> System.Phone_Number;
+			cout << "\tEmail-ID: ";
+			cin >> System.Email;
 			cout << "\tAge: ";
-			cin >> Staff.age;
+			cin >> System.age;
+			Entities.Lines(1);
 
+			//..write the personal details in the "Personal_Details.txt" file 
 			fstream new_file;
 			new_file.open(FILE_PERSONAL_DETAILS, ios::out | ios::app);
 			if (!new_file)
 			{
-				cout << "New file creation failed";
+				cout << "New file creation failed Directory lost!";
+				cout << "Program Exited" << endl;
+				exit(0);
 			}
 			else
 			{
-				new_file << Staff.name << "\n" << Staff.Phone_Number << "\n" << Staff_ID << "\n" << Staff.age << endl;
+				new_file << System.name << "\n" << System.Phone_Number << "\n" << System.Email << "\n" << System.age << endl;
 				new_file.close();
 			}
 
-			cout << "\tUser-name: ";
-			cin >> Username_;
-			cout << "\n\tPassword: ";
-			cin >> Pass_word;
-			cout << "\tReconfirm the Password: ";
-			cin >> Re_Confirm;
+			System.Signup();
 
-			returned_the_value = Staff.Bank_Signup_ID(Username_, Pass_word, Re_Confirm);
-			if (returned_the_value == 0)
+			cout << "Login with the registered username and Password" << endl;
+		}
+		else if (number == 0)
+		{
+			cout << "Exited successfuly" << endl;
+			exit(0);
+		}
+		//..Login code..
+		//..Take the user-name and password from the user and enter into the Login member function
+		else if (number == 1) {
+			Entities.Lines(1);
+			cout << "\n\tUser-name: ";
+			cin >> username;
+			cout << "\tPassword: ";
+			cin >> password;
+			Entities.Lines(1);
+			System.Login(username, password);
+			ReDirect = 0;
+		}
+		else if (number == 3)
+		{
+			//..sign up code 
+			Entities.Lines(1);
+			cout << "\n\t1) Login \n\t2) Sign-up\n";
+			unsigned short num;
+			cout << "\t";
+			cin >> num;
+			Entities.Lines(1);
+
+			//..login or sign up 
+			if (num == 1)
 			{
-				cout << "\tSign up successful , Welcome to the bank management system" << endl;
-				screen.User_Detail_display();
+				Entities.Lines(1);
+				cout << "\n\tUser-name: ";
+				cin >> username;
+				cout << "\tPassword: ";
+				cin >> password;
+				Entities.Lines(1);
+
+				//..check whether the password and the reconfirmed password match with each other 
+				returned_the_value = Staff.Login(username, password);
+				if (returned_the_value == 0)
+				{
+					//..username and password matched successfully
+					cout << "\n\tstaff log in Successful" << endl;
+					screen.User_Detail_display();
+					ReDirect = 0;
+				}
+				else if (returned_the_value == -1)
+				{
+					//..username matched but password is wrong 
+					cout << "\n\tWrong Password" << endl;
+					cout << "Program Exited!" << endl;
+					exit(0);
+				}
+				else if (returned_the_value == -2)
+				{
+					//..user not found , wrong user-name 
+					cout << "\n\tUser not found" << endl;
+					cout << "Program Exited!" << endl;
+					exit(0);
+				}
 			}
-			else if (returned_the_value == -1)
+			//..Signup code for staff member 
+			else if (num == 2)
 			{
-				cout << "\n\n\tThe password entered for re-confirmation does not match with the password in the first coloumn !!!" << endl;
-				exit(0);
+				char Username_[30];
+				char Pass_word[30];
+				Entities.Lines(1);
+				cout << "\n\tEnter the following details to sign-up as a new staff member in our bank." << endl;
+				cout << "\n\tFirst Name: ";
+				cin >> Staff.name;
+				cout << "\tPhone number: ";
+				cin >> Staff.Phone_Number;
+				cout << "\tStaff-ID: ";
+				cin >> Staff_ID;
+				cout << "\tAge: ";
+				cin >> Staff.age;
+				Entities.Lines(1);
+
+				fstream new_file;
+				new_file.open(FILE_PERSONAL_DETAILS, ios::out | ios::app);
+				if (!new_file)
+				{
+					cout << "New file creation failed Directory Lost!";
+					cout << "Program Exited!" << endl;
+					exit(0);
+				}
+				else
+				{
+					cout << "Data Registered Successfuly" << endl;
+					new_file << Staff.name << "\n" << Staff.Phone_Number << "\n" << Staff_ID << "\n" << Staff.age << endl;
+					new_file.close();
+				}
+
+				Entities.Lines(1);
+				cout << "\tUser-name: ";
+				cin >> Username_;
+				cout << "\n\tPassword: ";
+				cin >> Pass_word;
+				cout << "\tReconfirm the Password: ";
+				cin >> Re_Confirm;
+				Entities.Lines(1);
+
+				returned_the_value = Staff.Bank_Signup_ID(Username_, Pass_word, Re_Confirm);
+				if (returned_the_value == 0)
+				{
+					cout << "\tSign up successful , Welcome to the bank management system" << endl;
+					screen.User_Detail_display();
+					cout << "Login with the registered username and password" << endl;
+				}
+				else if (returned_the_value == -1)
+				{
+					cout << "\n\n\tThe password entered for re-confirmation does not match with the password in the first coloumn !!!" << endl;
+					cout << "Program Exited!" << endl;
+					exit(0);
+				}
 			}
+		}
+		else if (number == 4)
+		{
+			screen.Project_Details();
 		}
 	}
 	//..________________________________________Login and Signup Code end..________________________________________
 
-	
+
 	//continue_code = Menu_.Call_Function();
 
 	while (continue_code != 0)
@@ -509,58 +546,17 @@ void main()
 
 			}
 		}
-		//________________________________________________________Balance Inquiry code starts____________________________________
-		else if (continue_code == 7)
+		
+		else if (continue_code == 4)
 		{
-			cout << "Enter the Account number to see its Balance" << endl;
-			Balance_.Account_List();
-			cin >> Balance_.Account_number;
-			Balance_.Show_Balance();
+			cout << "\tPrinting the list of all accounts: \n" << endl;
+			Create.PrintNodes();
 		}
-		//________________________________________________________Balance Inquiry code ends____________________________________
-
-		//________________________________________________________Tax Invoice code starts____________________________________
-		else if (continue_code == 8)
-		{
-			cout << "\t----- Tax Invoice ----- " << endl;
-
-			cout << "Name : ";
-			cin >> Tax.Name1;
-
-			cout << "Account Number : ";
-			cin >> Tax.AccountNumber;
-
-			cout << "Income : ";
-			cin >> Tax.Income;
-
-			cout << "Phone Number : ";
-			cin >> Tax.PhnNo;
-
-			cout << "Age : ";
-			cin >> Tax.Age;
-
-			cout << "AaDhar No : ";
-			cin >> Tax.aadharNumber;
-
-			cout << "Pan Card Number : ";
-			cin >> Tax.PanCardNO;
-
-			cout << "Gender M / F / T : ";
-			cin >> Tax.Gender;
-			Tax.Tax_Invoice_Slab();
-		}
-		//________________________________________________________Tax Invoice code ends____________________________________
 
 		//________________________________________________________Open new Account code Starts____________________________________
 		else if (continue_code == 5)
 		{
-		//..Head pointer Defined 
-			//Node* Head;
-
-			//..Head Pointer intialized 
-			//Head = NULL;
-
-			//..Menu Loop
+				//..Menu Loop
 			while (input != 0)
 			{
 				//..Menu
@@ -589,24 +585,7 @@ void main()
 				}
 				else if (input == 2)
 				{
-					fstream _read;
-					_read.open(FILE_ACCOUNT_INFO, ios::in);
-					if (!_read)
-					{
-						cout << "No such file directiry found" << endl;
-					}
-					else
-					{
-						char name[30];
-						char num[15];
-						unsigned int balance;
-
-						_read >> name;
-						_read >> num;
-						_read >> balance;
-
-						_read.close();
-					}
+					Create.PrintNodes();
 				}
 				else if (input == 3)
 				{
@@ -629,6 +608,87 @@ void main()
 			}
 		}
 		//________________________________________________________Open new Account code Ends____________________________________
+		else if (continue_code == 6)
+		{
+			unsigned short confirm = 1;
+			char DEL_ACC_NUM[30];
+			cout << "Enter the account number you want to delete: ";
+			cin >> DEL_ACC_NUM;
+			while (confirm != 0)
+			{
+				cout << "\nDo you confirm to delete the account ? All the data from the account will be deleted" << endl;
+				cout << "Enter 1 to confirm delete and enter 0 to exit without deleting: " << endl;
+				cin >> confirm;
+				if (confirm == 1)
+				{
+					if (Create.DeleteNode(DEL_ACC_NUM) == true)
+					{
+						cout << "\nAccount Deleted ";
+						Create.WriteAccountsToFile();
+						confirm = 0;
+					}
+					else
+					{
+						cout << "\nAccount not found";
+						confirm = 0;
+					}
+				}
+				else if (confirm == 0)
+				{
+					cout << "\nExited Without deleting the account" << endl;
+					exit(0);
+				}
+				else
+				{
+					cout << "Wrong input !!!" << endl;
+				}
+			}
+		}
+		//________________________________________________________Balance Inquiry code starts____________________________________
+		else if (continue_code == 7)
+		{
+		cout << "Enter the Account number to see its Balance" << endl;
+		Balance_.Account_List();
+		cin >> Balance_.Account_number;
+		Balance_.Show_Balance();
+		}
+		//________________________________________________________Balance Inquiry code ends____________________________________
+
+		//________________________________________________________Tax Invoice code starts____________________________________
+		else if (continue_code == 8)
+		{
+		cout << "\t----- Tax Invoice ----- " << endl;
+
+		cout << "Name : ";
+		cin >> Tax.Name1;
+
+		cout << "Account Number : ";
+		cin >> Tax.AccountNumber;
+
+		cout << "Income : ";
+		cin >> Tax.Income;
+
+		cout << "Phone Number : ";
+		cin >> Tax.PhnNo;
+
+		cout << "Age : ";
+		cin >> Tax.Age;
+
+		cout << "AaDhar No : ";
+		cin >> Tax.aadharNumber;
+
+		cout << "Pan Card Number : ";
+		cin >> Tax.PanCardNO;
+
+		cout << "Gender M / F / T : ";
+		cin >> Tax.Gender;
+		Tax.Tax_Invoice_Slab();
+		}
+		//________________________________________________________Tax Invoice code ends____________________________________
+		else if (continue_code == 9)
+		{
+			screen.Project_Details();
+		}
 		else
 		{
 			cout << "No function found on number : " << continue_code << endl;

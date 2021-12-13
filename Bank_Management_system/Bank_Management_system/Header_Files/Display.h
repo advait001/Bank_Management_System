@@ -7,5 +7,6 @@ class User_Display : public Bank_System
 public :
 	//..display the details of the user 
 	void User_Detail_display();
+	void Project_Details();
 };
 
