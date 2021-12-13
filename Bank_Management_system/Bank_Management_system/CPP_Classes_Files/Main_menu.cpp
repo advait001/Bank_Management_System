@@ -34,6 +34,7 @@ int Main_menu::Menu()
 	cout << "\t|\t6.Close Account"; Tabs(4);
 	cout << "\t|\t7.Balance Inquiry"; Tabs(3);
 	cout << "\t|\t8.Tax Invoice"; Tabs(4);
+	cout << "\t|\t9.Project Details"; Tabs(3);
 	cout << "\t|________________________________________________.\n" << endl;
 
 	//..Main menu value is returned in Main_menu_select
@@ -45,12 +46,15 @@ int Main_menu::Call_Function()
 {
 	//..call Function 
 	//..this function is used to ask the user whether they want to go back to the main menu or exit the program 
+	Object.Lines();
 	cout << "\n\tEnter 1 to go back to the main menu or Enter 0 to exit through the code" << endl;
 	cin >> _Call;
+	Object.Lines();
 
 	if (_Call == 0)
 	{
 		//..if the user wants to exit the program
+		cout << "Program Exited Successfuly!" << endl;
 		exit(0);
 		return 0;
 	}

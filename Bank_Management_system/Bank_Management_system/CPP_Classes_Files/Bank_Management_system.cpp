@@ -83,6 +83,8 @@ void main()
 	Tax_Invoice Tax;
 	Node Create;
 	Entity Present;
+	Entity Entities;
+
 	//intialise database
 	InitDB();
 	//read existing records from file
@@ -94,16 +96,20 @@ void main()
 	//..Working for a single persons use currently..
 	while (ReDirect != 0) 
 	{
+		Entities.Lines();
 		cout << "\n\t0) Enter 0 to Exit" << endl;
 		cout << "\t1) Login(existing user)" << endl;
 		cout << "\t2) Sign - up(new user)" << endl;
 		cout << "\t3) Bank Management Login(bank Staff) " << endl;
 		cout << "\t4) Project Details" << endl;
+		Entities.Lines();
 		cout << "\n\t"; cin >> number;
+		Entities.Lines();
 
 		//..Personal details of the user 
 		if (number == 2) {
 
+			Entities.Lines();
 			cout << "\n\tEnter the following details to sign-up as a new user in our bank." << endl;
 			cout << "\n\tFirst Name: ";
 			cin >> System.name;
@@ -113,13 +119,16 @@ void main()
 			cin >> System.Email;
 			cout << "\tAge: ";
 			cin >> System.age;
+			Entities.Lines();
 
 			//..write the personal details in the "Personal_Details.txt" file 
 			fstream new_file;
 			new_file.open(FILE_PERSONAL_DETAILS, ios::out | ios::app);
 			if (!new_file)
 			{
-				cout << "New file creation failed";
+				cout << "New file creation failed Directory lost!";
+				cout << "Program Exited" << endl;
+				exit(0);
 			}
 			else
 			{
@@ -133,33 +142,40 @@ void main()
 		}
 		else if (number == 0)
 		{
+			cout << "Exited successfuly" << endl;
 			exit(0);
 		}
 		//..Login code..
 		//..Take the user-name and password from the user and enter into the Login member function
 		else if (number == 1) {
+			Entities.Lines();
 			cout << "\n\tUser-name: ";
 			cin >> username;
 			cout << "\tPassword: ";
 			cin >> password;
+			Entities.Lines();
 			System.Login(username, password);
 			ReDirect = 0;
 		}
 		else if (number == 3)
 		{
 			//..sign up code 
+			Entities.Lines();
 			cout << "\n\t1) Login \n\t2) Sign-up\n";
 			unsigned short num;
 			cout << "\t";
 			cin >> num;
+			Entities.Lines();
 
 			//..login or sign up 
 			if (num == 1)
 			{
+				Entities.Lines();
 				cout << "\n\tUser-name: ";
 				cin >> username;
 				cout << "\tPassword: ";
 				cin >> password;
+				Entities.Lines();
 
 				//..check whether the password and the reconfirmed password match with each other 
 				returned_the_value = Staff.Login(username, password);
@@ -174,12 +190,14 @@ void main()
 				{
 					//..username matched but password is wrong 
 					cout << "\n\tWrong Password" << endl;
+					cout << "Program Exited!" << endl;
 					exit(0);
 				}
 				else if (returned_the_value == -2)
 				{
 					//..user not found , wrong user-name 
 					cout << "\n\tUser not found" << endl;
+					cout << "Program Exited!" << endl;
 					exit(0);
 				}
 			}
@@ -188,7 +206,7 @@ void main()
 			{
 				char Username_[30];
 				char Pass_word[30];
-
+				Entities.Lines();
 				cout << "\n\tEnter the following details to sign-up as a new staff member in our bank." << endl;
 				cout << "\n\tFirst Name: ";
 				cin >> Staff.name;
@@ -198,25 +216,31 @@ void main()
 				cin >> Staff_ID;
 				cout << "\tAge: ";
 				cin >> Staff.age;
+				Entities.Lines();
 
 				fstream new_file;
 				new_file.open(FILE_PERSONAL_DETAILS, ios::out | ios::app);
 				if (!new_file)
 				{
-					cout << "New file creation failed";
+					cout << "New file creation failed Directory Lost!";
+					cout << "Program Exited!" << endl;
+					exit(0);
 				}
 				else
 				{
+					cout << "Data Registered Successfuly" << endl;
 					new_file << Staff.name << "\n" << Staff.Phone_Number << "\n" << Staff_ID << "\n" << Staff.age << endl;
 					new_file.close();
 				}
 
+				Entities.Lines();
 				cout << "\tUser-name: ";
 				cin >> Username_;
 				cout << "\n\tPassword: ";
 				cin >> Pass_word;
 				cout << "\tReconfirm the Password: ";
 				cin >> Re_Confirm;
+				Entities.Lines();
 
 				returned_the_value = Staff.Bank_Signup_ID(Username_, Pass_word, Re_Confirm);
 				if (returned_the_value == 0)
@@ -228,6 +252,7 @@ void main()
 				else if (returned_the_value == -1)
 				{
 					cout << "\n\n\tThe password entered for re-confirmation does not match with the password in the first coloumn !!!" << endl;
+					cout << "Program Exited!" << endl;
 					exit(0);
 				}
 			}
@@ -660,6 +685,10 @@ void main()
 		Tax.Tax_Invoice_Slab();
 		}
 		//________________________________________________________Tax Invoice code ends____________________________________
+		else if (continue_code == 9)
+		{
+			screen.Project_Details();
+		}
 		else
 		{
 			cout << "No function found on number : " << continue_code << endl;

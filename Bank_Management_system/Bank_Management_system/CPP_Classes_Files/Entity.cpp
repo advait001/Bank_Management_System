@@ -22,3 +22,8 @@ void Entity::Tabs(unsigned short num)
 		cout << "\t\t\t\t|" << endl;
 	}
 }
+
+void Entity::Lines()
+{
+	cout << "_______________________________________________________" << endl;
+}

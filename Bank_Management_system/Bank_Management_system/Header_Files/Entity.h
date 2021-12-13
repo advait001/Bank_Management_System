@@ -3,6 +3,7 @@ class Entity
 {
 public:
 	static void Tabs(unsigned short num);
+	static void Lines();
 };
 static const char *FILE_ACCOUNT_INFO = "Test_Files//Create_New_Acc_Info.txt";
 static const char* FILE_ACCOUNT_DETAILS = "Test_Files//Account_Details.txt";
