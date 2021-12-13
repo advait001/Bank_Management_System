@@ -12,8 +12,8 @@ void Bank_System :: Greet()
 	//..Welcome text
 	//..Basic function to represent the welcome text at the start
 	//Object.Tabs(4); 
-	cout << "\n\n\t\t\t\t._______________________________________." << endl;
-	cout << "\t\t\t\t|   Welcome to Bank Management System   |" << endl;
+	cout << "\n\n\n\t\t\t\t._______________________________________." << endl;
+	cout << "\t\t\t\t|   WELCOME TO BANK MANAGEMENT SYSTEM   |" << endl;
 	cout << "\t\t\t\t._______________________________________." << endl;
 }
 

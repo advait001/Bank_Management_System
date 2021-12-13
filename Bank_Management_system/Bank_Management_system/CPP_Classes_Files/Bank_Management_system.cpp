@@ -96,20 +96,20 @@ void main()
 	//..Working for a single persons use currently..
 	while (ReDirect != 0) 
 	{
-		Entities.Lines();
+		Entities.Lines(1);
 		cout << "\n\t0) Enter 0 to Exit" << endl;
 		cout << "\t1) Login(existing user)" << endl;
 		cout << "\t2) Sign - up(new user)" << endl;
 		cout << "\t3) Bank Management Login(bank Staff) " << endl;
 		cout << "\t4) Project Details" << endl;
-		Entities.Lines();
+		Entities.Lines(1);
 		cout << "\n\t"; cin >> number;
-		Entities.Lines();
+		Entities.Lines(1);
 
 		//..Personal details of the user 
 		if (number == 2) {
 
-			Entities.Lines();
+			Entities.Lines(1);
 			cout << "\n\tEnter the following details to sign-up as a new user in our bank." << endl;
 			cout << "\n\tFirst Name: ";
 			cin >> System.name;
@@ -119,7 +119,7 @@ void main()
 			cin >> System.Email;
 			cout << "\tAge: ";
 			cin >> System.age;
-			Entities.Lines();
+			Entities.Lines(1);
 
 			//..write the personal details in the "Personal_Details.txt" file 
 			fstream new_file;
@@ -148,34 +148,34 @@ void main()
 		//..Login code..
 		//..Take the user-name and password from the user and enter into the Login member function
 		else if (number == 1) {
-			Entities.Lines();
+			Entities.Lines(1);
 			cout << "\n\tUser-name: ";
 			cin >> username;
 			cout << "\tPassword: ";
 			cin >> password;
-			Entities.Lines();
+			Entities.Lines(1);
 			System.Login(username, password);
 			ReDirect = 0;
 		}
 		else if (number == 3)
 		{
 			//..sign up code 
-			Entities.Lines();
+			Entities.Lines(1);
 			cout << "\n\t1) Login \n\t2) Sign-up\n";
 			unsigned short num;
 			cout << "\t";
 			cin >> num;
-			Entities.Lines();
+			Entities.Lines(1);
 
 			//..login or sign up 
 			if (num == 1)
 			{
-				Entities.Lines();
+				Entities.Lines(1);
 				cout << "\n\tUser-name: ";
 				cin >> username;
 				cout << "\tPassword: ";
 				cin >> password;
-				Entities.Lines();
+				Entities.Lines(1);
 
 				//..check whether the password and the reconfirmed password match with each other 
 				returned_the_value = Staff.Login(username, password);
@@ -206,7 +206,7 @@ void main()
 			{
 				char Username_[30];
 				char Pass_word[30];
-				Entities.Lines();
+				Entities.Lines(1);
 				cout << "\n\tEnter the following details to sign-up as a new staff member in our bank." << endl;
 				cout << "\n\tFirst Name: ";
 				cin >> Staff.name;
@@ -216,7 +216,7 @@ void main()
 				cin >> Staff_ID;
 				cout << "\tAge: ";
 				cin >> Staff.age;
-				Entities.Lines();
+				Entities.Lines(1);
 
 				fstream new_file;
 				new_file.open(FILE_PERSONAL_DETAILS, ios::out | ios::app);
@@ -233,14 +233,14 @@ void main()
 					new_file.close();
 				}
 
-				Entities.Lines();
+				Entities.Lines(1);
 				cout << "\tUser-name: ";
 				cin >> Username_;
 				cout << "\n\tPassword: ";
 				cin >> Pass_word;
 				cout << "\tReconfirm the Password: ";
 				cin >> Re_Confirm;
-				Entities.Lines();
+				Entities.Lines(1);
 
 				returned_the_value = Staff.Bank_Signup_ID(Username_, Pass_word, Re_Confirm);
 				if (returned_the_value == 0)

@@ -46,10 +46,10 @@ int Main_menu::Call_Function()
 {
 	//..call Function 
 	//..this function is used to ask the user whether they want to go back to the main menu or exit the program 
-	Object.Lines();
+	Object.Lines(1);
 	cout << "\n\tEnter 1 to go back to the main menu or Enter 0 to exit through the code" << endl;
 	cin >> _Call;
-	Object.Lines();
+	Object.Lines(1);
 
 	if (_Call == 0)
 	{

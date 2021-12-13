@@ -31,7 +31,8 @@ void User_Display::User_Detail_display()
 
 void User_Display::Project_Details()
 {
-	Entities.Lines();
+	cout << "\n\n\n" << endl;
+	Entities.Lines(2);
 	cout << "\n\t\tPROJECT DETAILS\n" << endl;
 	cout << "\tThis project is made by : \n\n\t\tSHANTANU DOIFODE  \n\t\tADVAIT KHAIRNAR  \n\t\tNINAD KARDE \n\t\tGAURAV KUCHEKAR.\n" << endl;
 	cout << "\tThis is a Bank Management System project" << endl;
@@ -62,5 +63,6 @@ void User_Display::Project_Details()
 	cout << "\t\t8) Comments" << endl;
 	cout << "\t\t11) Dynamic Memory Allocation[malloc function]" << endl;
 	cout << "\tAdditional use Git - hub is done to professionalize the work and make is easily accessible to all and also helps the entire team to work on it simultaneously.\n\n" << endl;
-	Entities.Lines();
+	Entities.Lines(2);
+	cout << "\n\n\n" << endl;
 }
